@@ -1,0 +1,6 @@
+% P1 MOKP Experiment C no-replicate stability-aware transfer ECMADE-MOO full run.
+
+assignmentPath = fullfile(pwd,'p0_lite_outputs','experiment_c_no_replicate_external_assignments_20260731', ...
+    'mokp_no_replicate_assignment.csv');
+P1MOKPConfigRunner.runAssignment('ExperimentC_NoReplicate_ECMADE_MOO',assignmentPath, ...
+    fullfile(pwd,'p0_lite_outputs','p1_mokp_experiment_c_no_replicate_full_20260731'));

@@ -1,0 +1,6 @@
+% P1 MOKP Experiment C stability-aware transfer ECMADE-MOO full run.
+
+assignmentPath = fullfile(pwd,'p0_lite_outputs','p1_mokp_experiment_c_stability_assignments_20260729', ...
+    'p1_mokp_experiment_c_stability_theta_assignment.csv');
+P1MOKPConfigRunner.runAssignment('ExperimentC_StabilityAware_ECMADE_MOO',assignmentPath, ...
+    fullfile(pwd,'p0_lite_outputs','p1_mokp_experiment_c_stability_full_20260729'));

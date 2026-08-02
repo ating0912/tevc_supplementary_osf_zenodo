@@ -1,0 +1,6 @@
+% P1 MOKP P0 meta-learner transfer ECMADE-MOO full run.
+
+assignmentPath = fullfile(pwd,'p0_lite_outputs','p1_mokp_meta_transfer_assignments_20260719', ...
+    'p1_mokp_meta_transfer_theta_assignment.csv');
+P1MOKPConfigRunner.runAssignment('MetaTransfer_ECMADE_MOO',assignmentPath, ...
+    fullfile(pwd,'p0_lite_outputs','p1_mokp_meta_transfer_full_20260719'));
