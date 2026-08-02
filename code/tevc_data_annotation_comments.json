@@ -1,0 +1,535 @@
+{
+  "file": "C:\\Users\\yiting\\Documents\\Playground\\陳羿婷_TEVC第二SI_中文投稿母稿_紅字待補_20260723_數據標註.docx",
+  "comment_count": 23,
+  "comments": [
+    {
+      "id": "0",
+      "author": "Codex data mapping",
+      "date": "2026-07-23T06:12:04Z",
+      "initials": null,
+      "resolved": false,
+      "text": "P1 已補數據，放在此處與 4.1：Table S8 real-market rolling-window validation、Table S9 CVaR(95%)、Table S10 10/20/50 bps transaction-cost sensitivity。重點寫法：ECMADE_MOO 在 CVaR95 loss 排第 1，但 annual after-cost return 不是最佳，不能寫全面勝出。",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "【尚待加強｜real-market validation】目前 A/B/C 的主要實驗仍以 synthetic constrained portfolio instances 與 OR-Library 為主。至少補一組 real-market rolling-window validation，並回報 after-transaction-cost return、turnover、CVaR、maxi"
+            },
+            {
+              "where": "end",
+              "text": "【尚待加強｜real-market validation】目前 A/B/C 的主要實驗仍以 synthetic constrained portfolio instances 與 OR-Library 為主。至少補一組 real-market rolling-window validation，並回報 after-transaction-cost return、turnover、CVaR、maxi"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "author": "Codex data mapping",
+      "date": "2026-07-23T06:12:04Z",
+      "initials": null,
+      "resolved": false,
+      "text": "這裡不是數據缺口，需補方法公式：objective functions、risk definition、return estimation、weight bounds、repair operator、feasible-first / constraint violation handling。可放在 Method，不要用 P0/P1 結果表替代。",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "【尚待加強｜數學式】需補完整 objective functions、risk definition、return estimation、weight bounds、repair operator、feasible-first selection 或 constraint violation handling 公式。"
+            },
+            {
+              "where": "end",
+              "text": "【尚待加強｜數學式】需補完整 objective functions、risk definition、return estimation、weight bounds、repair operator、feasible-first selection 或 constraint violation handling 公式。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "author": "Codex data mapping",
+      "date": "2026-07-23T06:12:04Z",
+      "initials": null,
+      "resolved": false,
+      "text": "這裡不是數據缺口，需補 pseudo-code 與流程：Algorithm 1 ECMADE-MOO、Algorithm 2 theta selection、Algorithm 3 stability-aware label generation。可引用 P0 的 theta table 與 label protocol，但主要要補演算法描述。",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "【尚待加強｜演算法細節】需補 Algorithm 1：ECMADE-MOO pseudo-code；Algorithm 2：Meta-designed theta selection；Algorithm 3：Stability-aware label generation。需明確說明 archive 更新、migration、stagnation trigger 與 constraint repa"
+            },
+            {
+              "where": "end",
+              "text": "【尚待加強｜演算法細節】需補 Algorithm 1：ECMADE-MOO pseudo-code；Algorithm 2：Meta-designed theta selection；Algorithm 3：Stability-aware label generation。需明確說明 archive 更新、migration、stagnation trigger 與 constraint repa"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "author": "Codex data mapping",
+      "date": "2026-07-23T06:12:04Z",
+      "initials": null,
+      "resolved": false,
+      "text": "P0 已補數據，放 Table S1：24/L24 theta configuration table。輸出檔：p0_lite_outputs/theta_configuration_paper_table_20260723/theta_configuration_table_for_paper.csv。文字重點：selector 實際選 S、operator、migration、elite ratio、stagnation threshold。",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "【尚待加強｜theta 表】需補完整 L24 / 24 theta configuration table，列出每個 theta 的子群數、算子、exchange trigger、elite ratio、stagnation threshold、migration strategy 與 constraint-handling setting。Experiment C 的 theta_086、the"
+            },
+            {
+              "where": "end",
+              "text": "【尚待加強｜theta 表】需補完整 L24 / 24 theta configuration table，列出每個 theta 的子群數、算子、exchange trigger、elite ratio、stagnation threshold、migration strategy 與 constraint-handling setting。Experiment C 的 theta_086、the"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "author": "Codex data mapping",
+      "date": "2026-07-23T06:12:04Z",
+      "initials": null,
+      "resolved": false,
+      "text": "P0 已補數據，放 Table S4/S5：feature importance 與 Experiment C selector validation。輸出檔：p0_lite_outputs/experiment_c_stability_selector_training/feature_importance.csv、validation_selector_summary.csv。注意 top1/top3 hit rate = 0，文字要寫 stability-aware trade-off，不可寫精準重建 Oracle。",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "【尚待加強｜feature importance】需補 meta-feature 清單、計算方式、normalization 方式，以及 Random Forest feature importance / permutation importance / SHAP 分析。否則仍難證明 selector 真正依 problem characteristics 做 instance-aware ad"
+            },
+            {
+              "where": "end",
+              "text": "【尚待加強｜feature importance】需補 meta-feature 清單、計算方式、normalization 方式，以及 Random Forest feature importance / permutation importance / SHAP 分析。否則仍難證明 selector 真正依 problem characteristics 做 instance-aware ad"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "author": "Codex data mapping",
+      "date": "2026-07-23T06:12:04Z",
+      "initials": null,
+      "resolved": false,
+      "text": "P0 已補可寫資料：selector training rows = 3216、validation rows = 696、theta candidates = 24；Experiment C training label generation 約 96,480 optimizer runs，validation 約 20,880 runs。放在 label protocol / reproducibility / cost 小節。",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "【尚待加強｜label protocol】需完整說明 label rows 產生方式、training/validation/test split、是否有資料洩漏、防止 test instances 參與 label selection 的流程，以及 validation raw outputs 缺漏檢查。"
+            },
+            {
+              "where": "end",
+              "text": "【尚待加強｜label protocol】需完整說明 label rows 產生方式、training/validation/test split、是否有資料洩漏、防止 test instances 參與 label selection 的流程，以及 validation raw outputs 缺漏檢查。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "author": "Codex data mapping",
+      "date": "2026-07-23T06:12:04Z",
+      "initials": null,
+      "resolved": false,
+      "text": "P0 已補文字與表格，放 Table S3：統一用 RankScore / C_LabelScore / C_ThetaRank。C_LabelScore = -0.2 rank_HV - 0.2 rank_IGD - 0.3 rank_PF_Overlap - 0.3 rank_PF_Drift；rank 在同一 instance-K group 內計算，ties 用 average rank。",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "【尚待加強｜統一命名】Experiment B 的 RankScore、Experiment C 的 OverallRankScore 與 J-score 需統一命名與公式呈現，並說明 ties 處理、normalization 範圍與權重敏感度。"
+            },
+            {
+              "where": "end",
+              "text": "【尚待加強｜統一命名】Experiment B 的 RankScore、Experiment C 的 OverallRankScore 與 J-score 需統一命名與公式呈現，並說明 ties 處理、normalization 範圍與權重敏感度。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "author": "Codex data mapping",
+      "date": "2026-07-23T06:12:04Z",
+      "initials": null,
+      "resolved": false,
+      "text": "本節放 P1 real-market validation 三張表：Table S8 rolling-window performance、Table S9 CVaR95 downside risk、Table S10 transaction-cost sensitivity。請在段落中明確寫：此為 robustness / limitation evidence，不是 ECMADE_MOO 全面報酬勝出證據。",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "4.1 Real-market validation 補強設計"
+            },
+            {
+              "where": "end",
+              "text": "4.1 Real-market validation 補強設計"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "author": "Codex data mapping",
+      "date": "2026-07-23T06:12:04Z",
+      "initials": null,
+      "resolved": false,
+      "text": "P1 已補數據：33 rolling windows；annual net return、Sharpe、Sortino、MDD、turnover、runtime 已在 summary/method_overall_summary.csv；CVaR95 與 10/20/50 bps sensitivity 已在 cvar_sensitivity/。可直接填此段。",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "【尚待加強｜real-market validation 執行】請補一個最小可行版本：選 S&P 100 或台灣 50 成分股，使用 3 年 training window + 6 個月或 1 年 testing window 的 rolling evaluation；交易成本先設 10 bps / 20 bps / 50 bps 三組 sensitivity；回報 CVaR(95%)、MDD、t"
+            },
+            {
+              "where": "end",
+              "text": "【尚待加強｜real-market validation 執行】請補一個最小可行版本：選 S&P 100 或台灣 50 成分股，使用 3 年 training window + 6 個月或 1 年 testing window 的 rolling evaluation；交易成本先設 10 bps / 20 bps / 50 bps 三組 sensitivity；回報 CVaR(95%)、MDD、t"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "author": "Codex data mapping",
+      "date": "2026-07-23T06:12:04Z",
+      "initials": null,
+      "resolved": false,
+      "text": "需補 A/B/C 公平設定文字，不是新數據表。建議在 Method 補：paired by split-instance-K、common reference front、normalization scope、seed/runs/maxFE/N、constraint handling。統計檔已支援 paired instance-level tests。",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "【尚待加強｜一致性】A/B/C 必須明確說明是否使用相同 post-processing pipeline、common reference front、normalization、seed policy、maxFE、N、runs、RNG 與 constraint handling。"
+            },
+            {
+              "where": "end",
+              "text": "【尚待加強｜一致性】A/B/C 必須明確說明是否使用相同 post-processing pipeline、common reference front、normalization、seed policy、maxFE、N、runs、RNG 與 constraint handling。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "author": "Codex data mapping",
+      "date": "2026-07-23T06:12:04Z",
+      "initials": null,
+      "resolved": false,
+      "text": "P0 已補數據，放 Table S2：Experiment C Friedman tests；pairwise Wilcoxon + Holm 在 p0_lite_outputs/tevc_p0_statistical_tests_20260718/unified_pairwise_wilcoxon.csv。文字寫 primary endpoint / Holm-corrected paired evidence。",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "【尚待加強｜統計檢定】Experiment C 需補 Holm correction 或預先指定 primary endpoint（建議 OverallRankScore 或 stability-weighted J-rank）並做 C vs B 的配對檢定；未校正 sign-test p-values 只能作 exploratory evidence。"
+            },
+            {
+              "where": "end",
+              "text": "【尚待加強｜統計檢定】Experiment C 需補 Holm correction 或預先指定 primary endpoint（建議 OverallRankScore 或 stability-weighted J-rank）並做 C vs B 的配對檢定；未校正 sign-test p-values 只能作 exploratory evidence。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "author": "Codex data mapping",
+      "date": "2026-07-23T06:12:04Z",
+      "initials": null,
+      "resolved": false,
+      "text": "P1 已補數據，放 Table S7：MOKP non-financial constrained/combinatorial test bed。18 instances，每方法 540 runs；ECMADE_MOO overall RankScore = 2.000，first-place instances = 13/18。",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "【尚待加強｜非金融泛化】至少補一類非金融 constrained/combinatorial test bed，例如 multi-objective knapsack 或 constrained synthetic MOO，以避免被認為只是 portfolio-specific application。"
+            },
+            {
+              "where": "end",
+              "text": "【尚待加強｜非金融泛化】至少補一類非金融 constrained/combinatorial test bed，例如 multi-objective knapsack 或 constrained synthetic MOO，以避免被認為只是 portfolio-specific application。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "author": "Codex data mapping",
+      "date": "2026-07-23T06:12:04Z",
+      "initials": null,
+      "resolved": false,
+      "text": "依已補數據修正結論：P0 可寫 selector 具可解釋特徵與 stability-aware trade-off；P1 可寫 MOKP 泛化成立、real-market CVaR95 較穩；不可寫 selector 精準重建 Oracle，也不可寫 real-market return 全面勝出。",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "【尚待加強｜結論語氣】結論需依補完 Holm correction、feature importance、theta table 與 reproducibility package 後再修正；目前不可宣稱已完成跨領域泛化或 selector 已精準重建 Oracle。"
+            },
+            {
+              "where": "end",
+              "text": "【尚待加強｜結論語氣】結論需依補完 Holm correction、feature importance、theta table 與 reproducibility package 後再修正；目前不可宣稱已完成跨領域泛化或 selector 已精準重建 Oracle。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "author": "Codex data mapping",
+      "date": "2026-07-23T06:12:04Z",
+      "initials": null,
+      "resolved": false,
+      "text": "需整理 supplementary package，不是單一新數據。建議列入：code、README、environment.yml、MATLAB/PlatEMO version、CPU/GPU/OS、run logs、tables、figures、raw PF csv。P0/P1 新輸出路徑可引用 Playground 下 p0_lite_outputs。",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "【尚待加強｜可重現性 package】請整理 GitHub/OSF/Zenodo supplementary package：code、README、environment.yml、MATLAB/PlatEMO 版本、CPU/GPU/OS、run logs、tables、figures、raw PF csv。"
+            },
+            {
+              "where": "end",
+              "text": "【尚待加強｜可重現性 package】請整理 GitHub/OSF/Zenodo supplementary package：code、README、environment.yml、MATLAB/PlatEMO 版本、CPU/GPU/OS、run logs、tables、figures、raw PF csv。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "author": "Codex data mapping",
+      "date": "2026-07-23T06:12:04Z",
+      "initials": null,
+      "resolved": false,
+      "text": "P0 已補，對應 Table S1。請把 p0_lite_outputs/theta_configuration_paper_table_20260723/theta_configuration_table_for_paper.csv 轉成 SI 表格；正文簡述 theta encoding 的 5 個因子。",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "補完整 theta configuration table 與 theta encoding"
+            },
+            {
+              "where": "end",
+              "text": "補完整 theta configuration table 與 theta encoding"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "author": "Codex data mapping",
+      "date": "2026-07-23T06:12:04Z",
+      "initials": null,
+      "resolved": false,
+      "text": "P0 已補，對應 Table S2 與 unified_pairwise_wilcoxon.csv。放在 Experiment C 統計檢定段落。",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "補 Experiment C 的 Holm correction 或 primary endpoint paired test"
+            },
+            {
+              "where": "end",
+              "text": "補 Experiment C 的 Holm correction 或 primary endpoint paired test"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "author": "Codex data mapping",
+      "date": "2026-07-23T06:12:04Z",
+      "initials": null,
+      "resolved": false,
+      "text": "P0 已補，對應 Table S4/S5。請放 feature importance 前 10 名與 selector validation summary。",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "補 meta-feature 清單與 feature importance"
+            },
+            {
+              "where": "end",
+              "text": "補 meta-feature 清單與 feature importance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "author": "Codex data mapping",
+      "date": "2026-07-23T06:12:04Z",
+      "initials": null,
+      "resolved": false,
+      "text": "P0 已補，對應 Table S3。建議正文統一使用 RankScore 與 C_LabelScore，避免再混用 OverallRankScore/J-score。",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "統一 OverallRankScore / RankScore / J-score 名稱與公式"
+            },
+            {
+              "where": "end",
+              "text": "統一 OverallRankScore / RankScore / J-score 名稱與公式"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "author": "Codex data mapping",
+      "date": "2026-07-23T06:12:04Z",
+      "initials": null,
+      "resolved": false,
+      "text": "P1 已補，對應 Table S7 MOKP。可寫：18 non-financial MOKP instances，每方法 540 runs，ECMADE_MOO overall RankScore 第 1。",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "補非金融 constrained test bed"
+            },
+            {
+              "where": "end",
+              "text": "補非金融 constrained test bed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "19",
+      "author": "Codex data mapping",
+      "date": "2026-07-23T06:12:04Z",
+      "initials": null,
+      "resolved": false,
+      "text": "P1/P0 已補，對應 Table S6 cost/runtime。請分開 offline label-generation cost 與 online final optimization runtime。",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "補 configuration cost 與 meta-training cost"
+            },
+            {
+              "where": "end",
+              "text": "補 configuration cost 與 meta-training cost"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "20",
+      "author": "Codex data mapping",
+      "date": "2026-07-23T06:12:04Z",
+      "initials": null,
+      "resolved": false,
+      "text": "目前已補表格數據，但仍需決定圖：建議至少放 theta selection distribution、MOKP method ranking、real-market wealth/return-risk summary、CVaR95 或 cost sensitivity bar chart。",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "補論文圖表與視覺化"
+            },
+            {
+              "where": "end",
+              "text": "補論文圖表與視覺化"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "21",
+      "author": "Codex data mapping",
+      "date": "2026-07-23T06:12:04Z",
+      "initials": null,
+      "resolved": false,
+      "text": "這裡不是數據缺口，需補文獻與 Reference QC。主題：automated EA design、MetaBBO、RL/operator selection、constrained MOEA。",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "補 2024–2026 最新文獻"
+            },
+            {
+              "where": "end",
+              "text": "補 2024–2026 最新文獻"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "22",
+      "author": "Codex data mapping",
+      "date": "2026-07-23T06:12:04Z",
+      "initials": null,
+      "resolved": false,
+      "text": "這裡不是實驗數據缺口。需逐筆補 DOI、卷期頁碼、IEEE TEVC style；[7]、[9]、[10]、[38]、[39] 若已有正式出版版要替換；[42] 確認卷期、頁碼與 DOI。",
+      "anchors": [
+        {
+          "part": "word/document.xml",
+          "paragraphs": [
+            {
+              "where": "start",
+              "text": "【Reference QC 待辦】請逐筆補齊 DOI、卷期頁碼與 IEEE TEVC bibliography style；其中 [7]、[9]、[10]、[38]、[39] 若已有正式出版版本，需以正式出版資料取代 arXiv / proceedings 草稿資訊；[42] 請確認卷期、頁碼與 DOI。"
+            },
+            {
+              "where": "end",
+              "text": "【Reference QC 待辦】請逐筆補齊 DOI、卷期頁碼與 IEEE TEVC bibliography style；其中 [7]、[9]、[10]、[38]、[39] 若已有正式出版版本，需以正式出版資料取代 arXiv / proceedings 草稿資訊；[42] 請確認卷期、頁碼與 DOI。"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
