@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+title: TEVC Reproducibility Package
+message: If you use this package, please cite the associated TEVC paper.
+type: software
+authors:
+  - family-names: Chen
+    given-names: Yi-Ting
+date-released: 2026-07-31
+license: MIT

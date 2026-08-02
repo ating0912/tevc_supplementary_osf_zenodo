@@ -1,0 +1,21 @@
+﻿column,formal_selector,description
+assets,yes,Number of assets
+days,yes,Number of observations
+k_ratio,yes,Cardinality ratio
+K,yes,Cardinality constraint
+corr_structure,yes,Synthetic correlation regime
+return_distribution,yes,Return-distribution regime
+risk_structure,yes,Risk regime
+replicate,no,Generation identifier only; excluded from formal selector
+subpops,yes,Theta design feature
+eliteRatio,yes,Theta design feature
+stagnationThreshold,yes,Theta design feature
+theta,yes,Theta numeric value/id feature
+archiveLimitFactor,yes,Theta design feature
+operatorMode,yes,Executable operator mode
+exchangeMode,yes,Exchange mode
+bestGuide,yes,Best-guide policy
+source_operator,yes,Original theta operator family
+source_migration,yes,Original theta migration strategy
+source_archive_strategy,yes,Original archive strategy
+source_constraint_handling,yes,Constraint handling rule

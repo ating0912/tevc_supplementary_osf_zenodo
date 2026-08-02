@@ -1,0 +1,4 @@
+name: HandCrafted
+description: Hand-crafted ECMADE-MOO theta used as a fixed baseline in Experiment B/C.
+source_file: configs/theta_L24.csv
+selection_rule: locked by protocol; see Experiment B/C method assignment tables.

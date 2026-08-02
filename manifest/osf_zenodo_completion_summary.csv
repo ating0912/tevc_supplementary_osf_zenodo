@@ -1,0 +1,5 @@
+﻿item,archive,included,size_bytes,notes
+run_logs,logs/full_run_logs.zip,yes,15931959,Archive contains actual files from the local TEVC workspace. See dedicated inventory or archive contents for file-level details.
+figures,figures/paper_figures.zip,yes,12654276,Archive contains actual files from the local TEVC workspace. See dedicated inventory or archive contents for file-level details.
+raw_pf_csv,raw_pf/raw_pf_csv.zip,yes,645549117,Archive contains actual files from the local TEVC workspace. See dedicated inventory or archive contents for file-level details.
+software_hardware_environment,system/software_environment.md,yes,,OS/CPU/RAM/GPU/MATLAB/PlatEMO information is recorded.

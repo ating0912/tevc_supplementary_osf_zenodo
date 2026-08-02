@@ -1,0 +1,16 @@
+﻿item,requirement,status,notes
+source_code,Complete Python/MATLAB source code and runner scripts,partial,Workspace scripts are referenced in source_file_map.csv; full raw runner archive still needs final packaging.
+environment,Python/MATLAB/PlatEMO versions and third-party licenses,partial,Python requirements included; fill exact MATLAB and PlatEMO release before submission.
+synthetic_instances,192 synthetic instances or deterministic generation code,partial,Split manifest copied; raw instance files remain in workspace data path.
+split_manifest,Train/Validation/Test split manifest,complete,data/synthetic/split_manifest.csv
+theta_L24,L24 24-theta table,complete_if_copied,configs/theta_L24.csv
+rng_policy,All seeds and RNG policy,draft,manifest/rng_policy.md
+no_replicate_features,No-replicate meta-features and feature columns,partial,Formal feature columns copied; full meta-feature table should be added if not already present.
+labels,Train/Validation ranking labels,partial,labels/train_* and labels/validation_* are filtered from available legacy 70/15/15 outputs by the official 112/48/32 split authority; legacy source files are retained under labels/legacy_70_15_15.
+frozen_selector,Frozen no-replicate selector,complete_if_copied,selector/selector_no_replicate.joblib
+test_predictions,Test per-theta predictions and selected theta,complete_if_copied,selector/test_theta_predictions.csv and selector/test_selected_theta.csv
+run_level_metrics,Experiment A/B/C/ablation run-level metrics,partial,Key CSVs copied; raw final archive/objective files should be materialized for full archive.
+statistical_tests,Statistical-test inputs and outputs,partial,Main test CSVs copied; Vargha-Delaney A12 scripts/results should be confirmed.
+real_market,33 real-market windows and configured results,partial,Configured result CSVs copied; raw prices/ticker manifests still need rights-aware packaging.
+paper_outputs,Paper table/figure reconstruction scripts,partial,Paper table CSVs copied; figure scripts should be connected.
+readme_license,"README, license, and data-use statement",complete,"README.md, DATA_USE_STATEMENT.md, LICENSES_THIRD_PARTY.md"

@@ -1,0 +1,35 @@
+algorithms:
+  NSGAII:
+    population_size: 100
+    maxFE: 10000
+    source: PlatEMO/MATLAB-compatible runner
+  SPEA2:
+    population_size: 100
+    maxFE: 10000
+    source: PlatEMO/MATLAB-compatible runner
+  MOEAD:
+    population_size: 100
+    maxFE: 10000
+    source: PlatEMO/MATLAB-compatible runner
+  GDE3:
+    population_size: 100
+    maxFE: 10000
+    source: PlatEMO/MATLAB-compatible runner
+  A_MPMO:
+    population_size: 100
+    maxFE: 10000
+    source: A_MPMO_NSGAII_v290.m
+  ECMADE_MOO:
+    population_size: 100
+    maxFE: 10000
+    source: ECMADE_MOO.m and ecmade_moo.py
+    theta_library: configs/theta_L24.csv
+selector:
+  model: RandomForestRegressor
+  n_estimators: 500
+  min_samples_leaf: 2
+  max_depth: null
+  target: C_LabelScore
+  preprocessing:
+    categorical: OneHotEncoder(handle_unknown='ignore')
+    numeric: passthrough

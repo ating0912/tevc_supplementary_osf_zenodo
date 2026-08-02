@@ -1,0 +1,14 @@
+name: BayesianConfig
+search_space:
+  subpops: [2, 4, 8]
+  eliteRatio: [0.01, 0.03, 0.05]
+  stagnationThreshold: [10, 20, 30]
+  archiveLimitFactor: [3, 5, 8]
+  operatorMode: [rand1, rand2, current-to-best]
+  exchangeMode: [paper, ring, global]
+  bestGuide: [rank, crowding, feasibility]
+required_to_report:
+  - search_seed
+  - number_of_iterations
+  - acquisition_rule
+  - best_global_theta

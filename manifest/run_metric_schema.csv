@@ -1,0 +1,13 @@
+﻿column,type,description
+instance,string,Synthetic or market instance/window identifier
+method,string,Algorithm or configuration protocol
+run,integer,Run index and optimizer seed unless overridden
+HV,float,Hypervolume; higher is better
+IGD,float,Inverted generational distance; lower is better
+PF_Overlap,float,Pareto-front overlap at tolerance 0.02; higher is better
+PF_Drift,float,Pareto-front drift; lower is better
+Diversity,float,Diversity measure; direction stated by analysis script
+Spacing,float,Spacing measure; lower is usually better
+Runtime,float,Wall-clock runtime in seconds; lower is better
+seed,integer,Explicit seed when present
+run_dir,path,Path to raw objective/archive/decision files

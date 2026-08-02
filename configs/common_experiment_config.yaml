@@ -1,0 +1,22 @@
+experiment:
+  population_size: 100
+  maxFE: 10000
+  synthetic_runs_per_method: 30
+  real_market_runs_per_method_window: 10
+  hv_reference_point: [1.1, 1.1]
+  pf_overlap_tolerance: 0.02
+  tie_handling: average_rank
+  split_authority: data/synthetic/split_manifest.csv
+randomness:
+  synthetic_optimizer_rng: MATLAB/PlatEMO mcg16807
+  python_runner_rng: numpy.random.default_rng(seed)
+  optimizer_seed_rule: seed = run_index unless a runner-specific manifest overrides it
+  selector_seed: 20260717
+normalization:
+  objective_rule: (point - ideal) / max(nadir - ideal, 1e-12), clipped to [0, 1]
+  group_scope:
+    synthetic: split-instance-K or comparison group
+    real_market: universe-window
+metrics:
+  maximize: [HV, PF_Overlap, annual_return, sharpe, sortino]
+  minimize: [IGD, PF_Drift, Runtime, cvar95_loss, max_drawdown, turnover]

@@ -1,0 +1,6 @@
+﻿paper_artifact,package_output,inputs,script
+Experiment A table,paper_outputs/table_experiment_a.csv,experiments/experiment_a/experiment_A_instance_method_summary.csv,outputs/experiment_A_stats_delivery_20260706/build_delivery_csvs.ps1
+Experiment C table,paper_outputs/table_experiment_c.csv,experiments/experiment_bc/formal_five_overall_summary.csv,summarize_experiment_c_formal_five_method.py
+Real-market table,paper_outputs/table_real_market.csv,real_market/configured_overall_summary.csv,analyze_real_market_ecmade_config_statistics.py
+Selector performance figure,paper_outputs/figure_selector_performance.pdf,selector/selector_performance.csv,to be connected
+PF overlay figure,paper_outputs/figure_pf_overlay.pdf,raw final PF/objective files,to be connected

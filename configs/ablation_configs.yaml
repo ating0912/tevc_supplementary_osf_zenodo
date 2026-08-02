@@ -1,0 +1,20 @@
+selector_level:
+  FullSelector: all no-replicate problem and theta features
+  NoInstanceFeatures: theta features only
+  NoThetaFeatures: problem features only
+  RandomizedLabels: all formal features with shuffled labels
+algorithmic:
+  WithoutMetaLearning: fixed or non-selector theta assignment
+  WithoutStabilityObjective: removes PF stability component from label score
+  WithoutAdaptiveExchange: disables adaptive exchange mechanism
+  WithoutEliteInjection: disables elite injection
+  SubpopulationNumber: varies subpopulation count
+  FeatureGroupAblation: removes feature groups
+  ThetaFactorMainEffect: evaluates theta factor effects
+required_fields:
+  - variant
+  - removed_or_fixed_component
+  - optimizer_seed
+  - selector_seed
+  - raw_run_metrics
+  - paired_statistical_test

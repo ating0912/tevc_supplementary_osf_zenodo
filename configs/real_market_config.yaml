@@ -1,0 +1,26 @@
+universes:
+  - S&P 100
+  - NASDAQ 100
+  - Taiwan 50
+price_type: Adjusted Close unless the data-source manifest states otherwise
+rolling_windows: 33
+window_definition:
+  training_period: 3 years
+  out_of_sample_period: 6 months
+runs_per_method_window: 10
+transaction_cost_scenarios_bps: [10, 20, 50]
+required_outputs:
+  - ticker list
+  - download date
+  - cleaning log
+  - rolling window dates
+  - selected holdings and weights
+  - OOS return path
+  - turnover
+  - transaction cost sensitivity
+  - annual return
+  - volatility
+  - Sharpe
+  - Sortino
+  - CVaR
+  - MDD

@@ -1,0 +1,26 @@
+{
+  "numeric": [
+    "assets",
+    "days",
+    "k_ratio",
+    "K",
+    "subpops",
+    "eliteRatio",
+    "stagnationThreshold",
+    "theta",
+    "archiveLimitFactor"
+  ],
+  "categorical": [
+    "split",
+    "corr_structure",
+    "return_distribution",
+    "risk_structure",
+    "source_operator",
+    "source_migration",
+    "source_archive_strategy",
+    "source_constraint_handling",
+    "operatorMode",
+    "exchangeMode",
+    "bestGuide"
+  ]
+}
