@@ -1,0 +1,170 @@
+{
+  "input": "C:\\Users\\yiting\\Desktop\\NCHU\\lab\\TEVC\\\u9673\u7fbf\u5a77_\u5be6\u9a57A\u6578\u64da\u5831\u544a_0707.docx",
+  "fonts_by_char_count": {
+    "Times New Roman": 29931
+  },
+  "direct_run_formatting_runs": 3418,
+  "direct_paragraph_formatting_paragraphs": 516,
+  "heading_like_paragraphs_not_heading_style": [
+    {
+      "para_index": 1,
+      "text": "Experiment A \u6578\u64da\u5831\u544a",
+      "style": "Normal"
+    },
+    {
+      "para_index": 127,
+      "text": "\u8a2d\u5b9a",
+      "style": "Normal"
+    },
+    {
+      "para_index": 128,
+      "text": "\u56fa\u5b9a\u503c / \u8aaa\u660e",
+      "style": "Normal"
+    },
+    {
+      "para_index": 157,
+      "text": "\u6307\u6a19",
+      "style": "Normal"
+    },
+    {
+      "para_index": 158,
+      "text": "\u8a08\u7b97\u65b9\u5f0f\u8207\u89e3\u8b80",
+      "style": "Normal"
+    },
+    {
+      "para_index": 162,
+      "text": "\u4ee5 empirical reference front \u70ba\u53c3\u8003\uff0c\u8a08\u7b97 reference points \u5230 run PF \u7684\u5e73\u5747\u6700\u8fd1\u8ddd\u96e2\uff0c\u8d8a\u4f4e\u8d8a\u597d\u3002",
+      "style": "Normal"
+    },
+    {
+      "para_index": 166,
+      "text": "\u4ee5 repeated-run attainment curves \u5728 201-point grid \u4e0a\u7684 band width \u8861\u91cf\u7a69\u5b9a\u6027\uff0c\u8d8a\u4f4e\u4ee3\u8868\u8d8a\u7a69\u5b9a\u3002",
+      "style": "Normal"
+    },
+    {
+      "para_index": 168,
+      "text": "normalized PF centroid across runs \u7684\u5e73\u5747\u6f02\u79fb\u8ddd\u96e2\uff0c\u8d8a\u4f4e\u8d8a\u7a69\u5b9a\u3002",
+      "style": "Normal"
+    },
+    {
+      "para_index": 172,
+      "text": "\u76f4\u63a5\u8b80\u53d6\u6bcf\u6b21 run \u7684 runtime.csv\uff0c\u8d8a\u4f4e\u8d8a\u597d\u3002",
+      "style": "Normal"
+    },
+    {
+      "para_index": 175,
+      "text": "Method",
+      "style": "Normal"
+    },
+    {
+      "para_index": 176,
+      "text": "HV\u2191",
+      "style": "Normal"
+    },
+    {
+      "para_index": 177,
+      "text": "IGD\u2193",
+      "style": "Normal"
+    },
+    {
+      "para_index": 196,
+      "text": "Method",
+      "style": "Normal"
+    },
+    {
+      "para_index": 197,
+      "text": "HV\u2191",
+      "style": "Normal"
+    },
+    {
+      "para_index": 198,
+      "text": "IGD\u2193",
+      "style": "Normal"
+    },
+    {
+      "para_index": 217,
+      "text": "Method",
+      "style": "Normal"
+    },
+    {
+      "para_index": 218,
+      "text": "PF Overlap",
+      "style": "Normal"
+    },
+    {
+      "para_index": 219,
+      "text": "EAF Width",
+      "style": "Normal"
+    },
+    {
+      "para_index": 220,
+      "text": "PF Drift",
+      "style": "Normal"
+    },
+    {
+      "para_index": 245,
+      "text": "Method",
+      "style": "Normal"
+    }
+  ],
+  "examples": {
+    "direct_paragraph_formatting": [
+      {
+        "para_index": 1,
+        "text": "Experiment A \u6578\u64da\u5831\u544a",
+        "style": "Normal"
+      },
+      {
+        "para_index": 2,
+        "text": "Experiment A \u5df2\u5305\u542b synthetic constrained portfolio instances \u8207\u6b63\u5f0f OR-Library portfolio instances \u5169\u7d44\u8cc7\u6599\u3002Synthetic \u8cc7\u6599\u75313.2 Synt",
+        "style": "Normal"
+      },
+      {
+        "para_index": 3,
+        "text": "\u4f9d manifest \u9010\u5217\u547c\u53eb\u6f14\u7b97\u6cd5\uff0c\u65b9\u6cd5\u5305\u542b NSGAII\u3001SPEA2\u3001MOEAD\u3001GDE3\u3001ECMADE_MOO\u3001A_MPMO\u3002",
+        "style": "List Paragraph"
+      },
+      {
+        "para_index": 4,
+        "text": "\u6240\u6709\u65b9\u6cd5\u4f7f\u7528\u76f8\u540c\u516c\u5e73\u6027\u56fa\u5b9a\u8a2d\u5b9a",
+        "style": "List Paragraph"
+      },
+      {
+        "para_index": 5,
+        "text": "\u6bcf\u6b21 run \u8f38\u51fa pf_obj.csv\u3001pf_dec.csv\u3001population_obj.csv\u3001population_dec.csv\u3001runtime.csv\u3001feasible_rate.csv\u3001generation snapshots",
+        "style": "List Paragraph"
+      }
+    ],
+    "direct_run_formatting": [
+      {
+        "para_index": 1,
+        "run_text": "Experiment A ",
+        "style": "Normal"
+      },
+      {
+        "para_index": 1,
+        "run_text": "\u6578\u64da",
+        "style": "Normal"
+      },
+      {
+        "para_index": 1,
+        "run_text": "\u5831\u544a",
+        "style": "Normal"
+      },
+      {
+        "para_index": 2,
+        "run_text": "Experiment A ",
+        "style": "Normal"
+      },
+      {
+        "para_index": 2,
+        "run_text": "\u5df2\u5305\u542b",
+        "style": "Normal"
+      }
+    ]
+  },
+  "notes": [
+    "Direct formatting is not always wrong, but it often causes inconsistent output when templates change.",
+    "Heading-like paragraphs not using Heading styles can break TOC and accessibility."
+  ]
+}

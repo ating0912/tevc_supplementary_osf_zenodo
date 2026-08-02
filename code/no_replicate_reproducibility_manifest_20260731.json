@@ -1,0 +1,56 @@
+{
+  "created": "2026-07-31",
+  "workspace": "C:\\Users\\yiting\\Documents\\Playground",
+  "os": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "system": "Windows",
+    "release": "11",
+    "version": "10.0.26200",
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+    "cpu_count": 20
+  },
+  "python": {
+    "executable": "C:\\Users\\yiting\\miniconda3\\python.exe",
+    "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+    "packages": {
+      "numpy": "2.2.6",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "scikit-learn": "1.8.0",
+      "joblib": "1.5.3",
+      "shap": "0.52.0",
+      "matplotlib": "3.10.8"
+    }
+  },
+  "matlab": {
+    "version_command": "unavailable: CalledProcessError: Command '['matlab', '-batch', 'disp(version); exit']' returned non-zero exit status 1.",
+    "platemo_roots": [
+      "C:\\Users\\yiting\\Documents\\Playground\\PlatEMO_v2.9.0\\PlatEMO",
+      "C:\\Users\\yiting\\Documents\\Playground\\PlatEMO_v4.3"
+    ]
+  },
+  "experiment_outputs": {
+    "selector_training": "C:\\Users\\yiting\\Documents\\Playground\\p0_lite_outputs\\experiment_c_stability_selector_training",
+    "feature_importance": "C:\\Users\\yiting\\Documents\\Playground\\outputs\\experiment_c_feature_importance_20260725",
+    "replicate_audit": "C:\\Users\\yiting\\Documents\\Playground\\outputs\\experiment_c_replicate_audit_20260730",
+    "formal_five_method": "C:\\Users\\yiting\\Documents\\Playground\\p0_lite_outputs\\experiment_c_formal_five_method_no_replicate_20260731",
+    "six_method_audit": "C:\\Users\\yiting\\Documents\\Playground\\p0_lite_outputs\\experiment_c_replicate_audit_final_test_20260730",
+    "real_market": "C:\\Users\\yiting\\Documents\\Playground\\p0_lite_outputs\\p1_rolling_window_market_validation_20260719\\configured_ecmade_no_replicate_audit_summary_20260731",
+    "mokp": "C:\\Users\\yiting\\Documents\\Playground\\p0_lite_outputs\\p1_mokp_config_comparison_no_replicate_audit_20260731",
+    "selector_level_ablation": "C:\\Users\\yiting\\Documents\\Playground\\outputs\\selector_level_ablation_20260728"
+  },
+  "primary_commands": [
+    "python train_experiment_c_stability_selector.py",
+    "python outputs/experiment_c_feature_importance_20260725/compute_selector_importance.py",
+    "python plot_no_replicate_shap_diagnostics.py",
+    "python summarize_experiment_c_formal_five_method.py",
+    "python summarize_experiment_c_replicate_audit_final_test.py",
+    "python analyze_experiment_c_replicate_audit_statistics.py",
+    "python analyze_stability_weighted_rank_no_replicate_audit.py",
+    "python analyze_real_market_ecmade_no_replicate_audit.py",
+    "python analyze_p1_mokp_config_comparison_no_replicate_audit.py",
+    "matlab -batch \"SELECTOR_ABLATION_RUNS=30; SELECTOR_ABLATION_FORCE_RERUN=false; run_selector_level_ablation_final_test\"",
+    "python analyze_selector_level_ablation_final_test.py"
+  ]
+}
