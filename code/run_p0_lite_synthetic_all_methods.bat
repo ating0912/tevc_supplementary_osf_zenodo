@@ -4,7 +4,7 @@ setlocal enabledelayedexpansion
 rem Sequential launcher for all synthetic constrained portfolio methods.
 rem Each method is still launched through its own MATLAB script.
 
-set "ROOT=C:\Users\yiting\Documents\Playground"
+set "ROOT=."
 set "OUT=%ROOT%\p0_lite_outputs\synthetic_constrained_portfolio"
 set "LOGDIR=%OUT%\logs"
 

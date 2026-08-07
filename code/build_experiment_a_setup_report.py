@@ -11,7 +11,7 @@ from docx.oxml.ns import qn
 from docx.shared import Inches, Pt, RGBColor
 
 
-ROOT = r"C:\Users\yiting\Documents\Playground"
+ROOT = r"."
 OUT_ROOT = os.path.join(ROOT, "p0_lite_outputs", "synthetic_constrained_portfolio")
 REPORT_DIR = os.path.join(OUT_ROOT, "experiment_A_setup_report")
 MANIFEST = os.path.join(ROOT, "data", "synthetic_constrained_portfolio", "manifest.csv")

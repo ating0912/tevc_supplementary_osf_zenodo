@@ -580,7 +580,7 @@ def main() -> None:
         "",
         "重點數字：Training label generation 為 134 groups × 24 theta × 30 runs，歷史 Runtime 加總 109:32:25.55；正式 no-replicate final optimization 為 32 test groups × 30 runs，歷史 Runtime 加總 00:54:20.71；theta recommendation 重新量測為 13.23 秒，平均每個 test group 0.413 秒；post-processing 與 common-reference 計算重新量測為 00:07:39.46。",
         "",
-        "硬體與軟體環境：Windows 11，CPU 顯示為 Intel64 Family 6 Model 186 Stepping 2，邏輯核心數 20；Python executable 為 `C:\\Users\\yiting\\miniconda3\\python.exe`，Python 3.13.12，pandas 2.3.3，scikit-learn 1.8.0，scipy 1.16.3，shap 0.52.0。MATLAB/PlatEMO 使用本 workspace 內 `PlatEMO_v2.9.0\\PlatEMO` 與 `PlatEMO_v4.3`；manifest 中 MATLAB version command 未成功回傳，因此版本號仍標為 unavailable。",
+        "硬體與軟體環境：Windows 11，CPU 顯示為 Intel64 Family 6 Model 186 Stepping 2，邏輯核心數 20；Python executable 為 `python`，Python 3.13.12，pandas 2.3.3，scikit-learn 1.8.0，scipy 1.16.3，shap 0.52.0。MATLAB/PlatEMO 使用本 workspace 內 `PlatEMO_v2.9.0\\PlatEMO` 與 `PlatEMO_v4.3`；manifest 中 MATLAB version command 未成功回傳，因此版本號仍標為 unavailable。",
         "",
         "仍未找到完整歷史紀錄的項目：原始 MATLAB label-generation batch 的外部 wall-clock、feature preprocessing / selector training / theta recommendation / post-processing 的原始執行 wall-clock。這些 Python 項目已用同一資料與同一機器重新量測補足；MATLAB optimizer 項目則使用每個 run 的歷史 Runtime 欄位作為可回溯成本。",
         "",

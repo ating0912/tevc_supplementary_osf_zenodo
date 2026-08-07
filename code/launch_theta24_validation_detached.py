@@ -5,11 +5,11 @@ import subprocess
 from pathlib import Path
 
 
-ROOT = Path(r"C:\Users\yiting\Documents\Playground")
+ROOT = Path(r".")
 OUT_ROOT = ROOT / r"p0_lite_outputs\theta24_70_15_15_validation_label_full_20260713"
 MATLAB = r"C:\Program Files\MATLAB\R2026a\bin\matlab.exe"
 BATCH = (
-    r"THETA24_FULL_OUT_ROOT='C:\Users\yiting\Documents\Playground\p0_lite_outputs\theta24_70_15_15_validation_label_full_20260713'; "
+    r"THETA24_FULL_OUT_ROOT='p0_lite_outputs\theta24_70_15_15_validation_label_full_20260713'; "
     r"THETA24_FULL_SPLITS={'Validation'}; "
     r"THETA24_FULL_MAX_INSTANCES=29; "
     r"run_theta24_192instance_label_full"

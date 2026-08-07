@@ -12,6 +12,8 @@ ROOT = Path(__file__).resolve().parents[1]
 
 REQUIRED = [
     "README.md",
+    "README.zh-TW.md",
+    "audit_all_artifacts.py",
     "environment.yml",
     "configs/common_experiment_config.yaml",
     "configs/algorithm_parameters.yaml",
@@ -25,6 +27,7 @@ REQUIRED = [
     "experiments/experiment_a/experiment_A_statistical_tests.csv",
     "manifest/source_file_map.csv",
     "manifest/reproducibility_checklist.csv",
+    "manifest/paper_value_crosscheck.csv",
 ]
 
 

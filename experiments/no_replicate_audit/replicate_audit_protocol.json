@@ -1,12 +1,12 @@
 {
   "purpose": "Experiment C replicate feature audit and no-replicate retraining",
   "seed": 20260717,
-  "train_labels": "C:\\Users\\yiting\\Documents\\Playground\\p0_lite_outputs\\theta24_70_15_15_training_label_full_20260706\\knowledge_base_parameter_report\\experiment_c_stability_regression_labels.csv",
-  "validation_labels": "C:\\Users\\yiting\\Documents\\Playground\\p0_lite_outputs\\theta24_70_15_15_validation_label_full_20260713\\knowledge_base_parameter_report\\experiment_c_stability_regression_labels.csv",
-  "manifest": "C:\\Users\\yiting\\Documents\\Playground\\data\\synthetic_constrained_portfolio\\manifest_70_15_15.csv",
-  "assignment_manifest": "C:\\Users\\yiting\\Documents\\Playground\\data\\synthetic_constrained_portfolio\\manifest.csv",
-  "old_selector_dir": "C:\\Users\\yiting\\Documents\\Playground\\p0_lite_outputs\\experiment_c_stability_selector_training",
-  "old_test_comparison": "C:\\Users\\yiting\\Documents\\Playground\\p0_lite_outputs\\experiment_c_stability_comparison_20260717\\overall_configuration_comparison.csv",
+  "train_labels": "p0_lite_outputs\\theta24_70_15_15_training_label_full_20260706\\knowledge_base_parameter_report\\experiment_c_stability_regression_labels.csv",
+  "validation_labels": "p0_lite_outputs\\theta24_70_15_15_validation_label_full_20260713\\knowledge_base_parameter_report\\experiment_c_stability_regression_labels.csv",
+  "manifest": "data\\synthetic_constrained_portfolio\\manifest_70_15_15.csv",
+  "assignment_manifest": "data\\synthetic_constrained_portfolio\\manifest.csv",
+  "old_selector_dir": "p0_lite_outputs\\experiment_c_stability_selector_training",
+  "old_test_comparison": "p0_lite_outputs\\experiment_c_stability_comparison_20260717\\overall_configuration_comparison.csv",
   "variants": {
     "full_selector_no_replicate": {
       "label": "Full Selector (replicate removed)",

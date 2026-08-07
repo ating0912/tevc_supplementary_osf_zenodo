@@ -1,6 +1,6 @@
 $ErrorActionPreference = "Stop"
 
-$Root = "C:\Users\yiting\Documents\Playground"
+$Root = "."
 $OutRoot = Join-Path $Root "p0_lite_outputs\tevc_pdf_direct_ablation_full_20260717"
 $JobFile = Join-Path $Root "run_tevc_pdf_direct_ablation_full_job.m"
 $StdOut = Join-Path $OutRoot "matlab_stdout.log"

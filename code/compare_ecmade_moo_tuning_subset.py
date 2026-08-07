@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 
 
-ROOT = Path(r"C:\Users\yiting\Documents\Playground")
+ROOT = Path(r".")
 MANIFEST = ROOT / "data" / "synthetic_constrained_portfolio" / "manifest.csv"
 METHODS = [
     "ECMADE_TUNE_DEFAULT",

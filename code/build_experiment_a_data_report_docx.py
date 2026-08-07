@@ -11,7 +11,7 @@ from docx.oxml.ns import qn
 from docx.shared import Inches, Pt, RGBColor
 
 
-ROOT = Path(r"C:\Users\yiting\Documents\Playground")
+ROOT = Path(r".")
 REPORT_DIR = ROOT / "p0_lite_outputs" / "synthetic_constrained_portfolio" / "experiment_A_report_20260703_232819"
 OUT_DIR = ROOT / "docx_outputs"
 OUT_PATH = OUT_DIR / "Experiment_A_數據報告_含A_MPMO_20260703_232819.docx"

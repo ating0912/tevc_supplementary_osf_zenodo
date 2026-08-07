@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 REQUIRED = [
     "README.md",
     "README.zh-TW.md",
+    "audit_all_artifacts.py",
     "LICENSE",
     "CITATION.cff",
     "environment.yml",
@@ -49,6 +50,10 @@ REQUIRED = [
     "manifest/external_artifacts.csv",
     "manifest/supplementary_package_checklist.csv",
     "manifest/artifact_checksums.sha256",
+    "manifest/paper_value_crosscheck.csv",
+    "docs/zenodo_release_checklist.md",
+    "scripts/check_paper_values.py",
+    "scripts/check_no_personal_paths.py",
 ]
 
 MINIMUM_BYTES = {

@@ -11,7 +11,7 @@ from docx.oxml.ns import qn
 from docx.shared import Inches, Pt, RGBColor
 
 
-ROOT = Path(r"C:\Users\yiting\Documents\Playground")
+ROOT = Path(r".")
 SUMMARY_DIR = ROOT / "p0_lite_outputs" / "experiment_b_configuration_summary_20260713"
 FIG_DIR = SUMMARY_DIR / "figures"
 OUT_DIR = ROOT / "docx_outputs"

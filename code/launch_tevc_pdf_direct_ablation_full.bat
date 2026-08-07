@@ -1,5 +1,5 @@
 @echo off
-set ROOT=C:\Users\yiting\Documents\Playground
+set ROOT=.
 set OUTROOT=%ROOT%\p0_lite_outputs\tevc_pdf_direct_ablation_full_20260717
 if not exist "%OUTROOT%" mkdir "%OUTROOT%"
 cd /d "%ROOT%"

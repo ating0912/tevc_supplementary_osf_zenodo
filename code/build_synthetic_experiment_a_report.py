@@ -18,7 +18,7 @@ from docx.oxml.ns import qn
 from PIL import Image, ImageDraw, ImageFont
 
 
-ROOT = os.environ.get("EXPERIMENT_A_ROOT", r"C:\Users\yiting\Documents\Playground")
+ROOT = os.environ.get("EXPERIMENT_A_ROOT", r".")
 OUT_ROOT = os.environ.get(
     "EXPERIMENT_A_OUT_ROOT",
     os.path.join(ROOT, "p0_lite_outputs", "synthetic_constrained_portfolio"),

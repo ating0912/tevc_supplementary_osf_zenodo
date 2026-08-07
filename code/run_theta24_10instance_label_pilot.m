@@ -2,7 +2,7 @@ function run_theta24_10instance_label_pilot()
 % Pilot meta-learning label generation: 10 training instances x 24 theta x 30 runs.
 
 scriptDir = fileparts(mfilename('fullpath'));
-thetaPath = 'C:\Users\yiting\Desktop\NCHU\lab\TEVC\TEVC_P0_Selected_Theta_fractional_24.xlsx';
+thetaPath = fullfile(fileparts(scriptDir),'external_data','TEVC_P0_Selected_Theta_fractional_24.xlsx');
 manifestPath = fullfile(scriptDir,'data','synthetic_constrained_portfolio','manifest.csv');
 
 cfg = struct();

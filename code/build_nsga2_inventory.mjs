@@ -2,7 +2,7 @@ import { Workbook, SpreadsheetFile } from "@oai/artifact-tool";
 import fs from "node:fs/promises";
 import path from "node:path";
 
-const root = "C:\\Users\\yiting\\Documents\\Playground";
+const root = ".";
 const outRoot = path.join(root, "nsga2_outputs");
 const outputPath = path.join(outRoot, "NSGAII_all_experiment_combinations_with_IGD_data_2026-06-09.xlsx");
 

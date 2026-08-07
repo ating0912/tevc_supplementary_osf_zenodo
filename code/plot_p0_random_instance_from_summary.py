@@ -14,7 +14,7 @@ GRID_SCRIPT = TOOL_DIR / "plot_p0_all_methods_runs_grid.py"
 OVERLAY_SCRIPT = TOOL_DIR / "plot_p0_all_methods_pf_overlay.py"
 HEATMAP_SCRIPT = TOOL_DIR / "plot_p0_all_methods_pf_heatmap.py"
 EAF_SCRIPT = TOOL_DIR / "plot_p0_all_methods_eaf.py"
-DEFAULT_OUTPUT_ROOT = Path(r"C:\Users\yiting\Desktop\NCHU\lab\TEVC\code\output")
+DEFAULT_OUTPUT_ROOT = TOOL_DIR / "output"
 
 
 def parse_args():

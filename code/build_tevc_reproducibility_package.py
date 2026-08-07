@@ -122,25 +122,12 @@ python scripts/check_package.py
 
 The audit checks the mandatory file inventory, the 112/48/32 split manifest, label leakage against the test split when label files are present, and the no-replicate selector artifacts.
 
-## Full Reproduction Entry Point
+## Artifact Audit Entry Point
 
-The intended complete pipeline is:
-
-```bash
-python reproduce_all.py
-```
-
-For long-running reproduction, execute the phases separately:
+This command audits the precomputed artifacts. It does not launch a fully automated end-to-end reproduction:
 
 ```bash
-python 01_generate_instances.py
-python 02_generate_labels.py
-python 03_train_selector_no_replicate.py
-python 04_run_final_experiment.py
-python 05_compute_metrics.py
-python 06_run_statistical_tests.py
-python 07_generate_tables.py
-python 08_generate_figures.py
+python audit_all_artifacts.py
 ```
 
 The wrapper scripts are deliberately small: they document the official order and call the package checks. Connect the heavy MATLAB/Python runners listed in `manifest/source_file_map.csv` when preparing a fully self-contained archive.
@@ -557,7 +544,7 @@ if __name__ == "__main__":
 """
 
 
-REPRODUCE_ALL = r"""
+AUDIT_ALL = r"""
 from __future__ import annotations
 
 import subprocess
@@ -581,7 +568,7 @@ STAGES = [
 def main() -> None:
     for stage in STAGES:
         subprocess.check_call([sys.executable, str(ROOT / "scripts" / "run_stage.py"), "--stage", stage, "--audit-only"])
-    print("All package-stage audits completed. Remove --audit-only in stage wrappers after connecting full runners.")
+    print("All precomputed package-artifact audits completed. No research jobs were launched.")
 
 
 if __name__ == "__main__":
@@ -662,7 +649,7 @@ def write_docs() -> None:
     write_text(PKG / "manifest/rng_policy.md", RNG_POLICY)
     write_text(PKG / "scripts/check_package.py", CHECK_PACKAGE)
     write_text(PKG / "scripts/run_stage.py", RUN_STAGE)
-    write_text(PKG / "reproduce_all.py", REPRODUCE_ALL)
+    write_text(PKG / "audit_all_artifacts.py", AUDIT_ALL)
     stage_files = [
         ("01_generate_instances.py", "generate_instances"),
         ("02_generate_labels.py", "generate_labels"),

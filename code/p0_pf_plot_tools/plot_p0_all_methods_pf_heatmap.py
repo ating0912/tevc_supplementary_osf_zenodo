@@ -17,7 +17,7 @@ plt.rcParams["axes.unicode_minus"] = False
 
 
 DEFAULT_INSTANCE_DIR = Path(
-    r"C:\Users\yiting\Documents\Playground\p0_lite_outputs"
+    r"p0_lite_outputs"
     r"\synthetic_constrained_portfolio\test"
     r"\syn_n500_k30_pathological_cov_normal_extreme_events_r02_s20260818"
     r"\K_150"

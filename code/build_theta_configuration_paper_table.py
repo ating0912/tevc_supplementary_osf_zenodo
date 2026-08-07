@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 from pathlib import Path
 
 import pandas as pd
@@ -7,7 +8,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parent
 OUT_DIR = ROOT / "p0_lite_outputs" / "theta_configuration_paper_table_20260723"
-SELECTED_THETA = Path(r"C:\Users\yiting\Desktop\NCHU\lab\TEVC\TEVC_P0_Selected_Theta_fractional_24.xlsx")
+SELECTED_THETA = Path(os.environ.get("TEVC_THETA_WORKBOOK", ROOT.parent / "external_data" / "TEVC_P0_Selected_Theta_fractional_24.xlsx"))
 ASSIGNMENT = ROOT / "p0_lite_outputs" / "experiment_c_stability_selector_training" / "experiment_c_stability_theta_assignment.csv"
 
 

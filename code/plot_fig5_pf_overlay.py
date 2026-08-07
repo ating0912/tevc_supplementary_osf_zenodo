@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 base = Path(r"\\wsl$\Ubuntu\home\yiting\lab\PEATSD\fig5_ng_outputs\raw")
-out = Path(r"C:\Users\yiting\Documents\Playground")
+out = Path(r".")
 ng_values = [1, 10, 20, 40, 80]
 colors = {1:'#1f77b4', 10:'#ff7f0e', 20:'#2ca02c', 40:'#d62728', 80:'#9467bd'}
 problems_by_group = {

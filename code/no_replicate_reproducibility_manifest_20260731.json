@@ -1,6 +1,6 @@
 {
   "created": "2026-07-31",
-  "workspace": "C:\\Users\\yiting\\Documents\\Playground",
+  "workspace": ".",
   "os": {
     "platform": "Windows-11-10.0.26200-SP0",
     "system": "Windows",
@@ -11,7 +11,7 @@
     "cpu_count": 20
   },
   "python": {
-    "executable": "C:\\Users\\yiting\\miniconda3\\python.exe",
+    "executable": "python",
     "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
     "packages": {
       "numpy": "2.2.6",
@@ -26,19 +26,19 @@
   "matlab": {
     "version_command": "unavailable: CalledProcessError: Command '['matlab', '-batch', 'disp(version); exit']' returned non-zero exit status 1.",
     "platemo_roots": [
-      "C:\\Users\\yiting\\Documents\\Playground\\PlatEMO_v2.9.0\\PlatEMO",
-      "C:\\Users\\yiting\\Documents\\Playground\\PlatEMO_v4.3"
+      "PlatEMO_v2.9.0\\PlatEMO",
+      "PlatEMO_v4.3"
     ]
   },
   "experiment_outputs": {
-    "selector_training": "C:\\Users\\yiting\\Documents\\Playground\\p0_lite_outputs\\experiment_c_stability_selector_training",
-    "feature_importance": "C:\\Users\\yiting\\Documents\\Playground\\outputs\\experiment_c_feature_importance_20260725",
-    "replicate_audit": "C:\\Users\\yiting\\Documents\\Playground\\outputs\\experiment_c_replicate_audit_20260730",
-    "formal_five_method": "C:\\Users\\yiting\\Documents\\Playground\\p0_lite_outputs\\experiment_c_formal_five_method_no_replicate_20260731",
-    "six_method_audit": "C:\\Users\\yiting\\Documents\\Playground\\p0_lite_outputs\\experiment_c_replicate_audit_final_test_20260730",
-    "real_market": "C:\\Users\\yiting\\Documents\\Playground\\p0_lite_outputs\\p1_rolling_window_market_validation_20260719\\configured_ecmade_no_replicate_audit_summary_20260731",
-    "mokp": "C:\\Users\\yiting\\Documents\\Playground\\p0_lite_outputs\\p1_mokp_config_comparison_no_replicate_audit_20260731",
-    "selector_level_ablation": "C:\\Users\\yiting\\Documents\\Playground\\outputs\\selector_level_ablation_20260728"
+    "selector_training": "p0_lite_outputs\\experiment_c_stability_selector_training",
+    "feature_importance": "outputs\\experiment_c_feature_importance_20260725",
+    "replicate_audit": "outputs\\experiment_c_replicate_audit_20260730",
+    "formal_five_method": "p0_lite_outputs\\experiment_c_formal_five_method_no_replicate_20260731",
+    "six_method_audit": "p0_lite_outputs\\experiment_c_replicate_audit_final_test_20260730",
+    "real_market": "p0_lite_outputs\\p1_rolling_window_market_validation_20260719\\configured_ecmade_no_replicate_audit_summary_20260731",
+    "mokp": "p0_lite_outputs\\p1_mokp_config_comparison_no_replicate_audit_20260731",
+    "selector_level_ablation": "outputs\\selector_level_ablation_20260728"
   },
   "primary_commands": [
     "python train_experiment_c_stability_selector.py",

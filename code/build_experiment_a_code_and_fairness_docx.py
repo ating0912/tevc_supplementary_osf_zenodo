@@ -11,7 +11,7 @@ from docx.oxml.ns import qn
 from docx.shared import Inches, Pt, RGBColor
 
 
-ROOT = Path(r"C:\Users\yiting\Documents\Playground")
+ROOT = Path(r".")
 OUT_DIR = ROOT / "docx_outputs"
 OUT_PATH = OUT_DIR / "Experiment_A_程式檔案與公平性固定設定_修正版.docx"
 

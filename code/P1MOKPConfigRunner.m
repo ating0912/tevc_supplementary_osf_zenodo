@@ -293,8 +293,8 @@ classdef P1MOKPConfigRunner
         end
 
         function path = defaultThetaPath()
-            candidates = {'C:\Users\yiting\Desktop\NCHU\lab\TEVC\excel\TEVC_P0_L24_Orthogonal_Theta_Configurations.xlsx', ...
-                'C:\Users\yiting\Desktop\NCHU\lab\TEVC\data\TEVC_P0_L24_Orthogonal_Theta_Configurations.xlsx'};
+            repoRoot = fileparts(fileparts(mfilename('fullpath')));
+            candidates = {fullfile(repoRoot,'external_data','TEVC_P0_L24_Orthogonal_Theta_Configurations.xlsx')};
             path = candidates{1};
             for i = 1:numel(candidates)
                 if exist(candidates{i},'file'); path = candidates{i}; return; end

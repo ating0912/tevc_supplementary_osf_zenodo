@@ -11,8 +11,8 @@ from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 
 
-REPORT_DIR = r"C:\Users\yiting\Documents\Playground\p0_lite_outputs\synthetic_constrained_portfolio\experiment_A_report_20260701_112713"
-OUT_ROOT = r"C:\Users\yiting\Documents\Playground\p0_lite_outputs\synthetic_constrained_portfolio"
+REPORT_DIR = r"p0_lite_outputs\synthetic_constrained_portfolio\experiment_A_report_20260701_112713"
+OUT_ROOT = r"p0_lite_outputs\synthetic_constrained_portfolio"
 METHODS = ["NSGAII", "SPEA2", "MOEAD", "GDE3", "A_MPMO", "ECMADE_MOO"]
 
 

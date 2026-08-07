@@ -5,7 +5,7 @@ from pathlib import Path
 
 
 SKILL_DIR = Path(
-    r"C:\Users\yiting\.codex\plugins\cache\openai-primary-runtime\documents\26.715.12143\skills\documents"
+    r"external_tools/plugins\cache\openai-primary-runtime\documents\26.715.12143\skills\documents"
 )
 sys.path.insert(0, str(SKILL_DIR / "scripts"))
 
@@ -13,10 +13,10 @@ from comments_add import add_comments  # noqa: E402
 
 
 INPUT_DOCX = Path(
-    r"C:\Users\yiting\Desktop\NCHU\lab\TEVC\陳羿婷_TEVC第二SI_中文投稿母稿_紅字待補_20260723.docx"
+    r"external_data/陳羿婷_TEVC第二SI_中文投稿母稿_紅字待補_20260723.docx"
 )
 OUTPUT_DOCX = Path(
-    r"C:\Users\yiting\Documents\Playground\陳羿婷_TEVC第二SI_中文投稿母稿_紅字待補_20260723_數據標註.docx"
+    r"陳羿婷_TEVC第二SI_中文投稿母稿_紅字待補_20260723_數據標註.docx"
 )
 
 

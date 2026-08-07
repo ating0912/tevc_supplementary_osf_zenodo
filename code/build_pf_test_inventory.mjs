@@ -2,7 +2,7 @@ import { Workbook, SpreadsheetFile } from "@oai/artifact-tool";
 import fs from "node:fs/promises";
 import path from "node:path";
 
-const root = "C:\\Users\\yiting\\Documents\\Playground";
+const root = ".";
 const base = path.join(root, "nsga2_outputs");
 const t18 = path.join(base, "v290_pf_sources_t1_t8");
 const pf10 = path.join(base, "v290_pf10_native_metric");

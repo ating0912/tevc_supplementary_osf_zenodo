@@ -2,7 +2,7 @@ function run_theta24_192instance_label_full()
 % Full meta-learning label generation for the 70/15/15 Training split.
 
 scriptDir = fileparts(mfilename('fullpath'));
-thetaPath = 'C:\Users\yiting\Desktop\NCHU\lab\TEVC\TEVC_P0_Selected_Theta_fractional_24.xlsx';
+thetaPath = fullfile(fileparts(scriptDir),'external_data','TEVC_P0_Selected_Theta_fractional_24.xlsx');
 manifestPath = fullfile(scriptDir,'data','synthetic_constrained_portfolio','manifest_70_15_15.csv');
 instanceRoot = fullfile(scriptDir,'data','synthetic_constrained_portfolio','instances_70_15_15','Training');
 

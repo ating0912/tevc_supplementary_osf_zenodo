@@ -1,7 +1,7 @@
 {
-  "title": "TEVC Complete Supplementary and Reproducibility Package (No-Replicate)",
+  "title": "TEVC Supplementary Artifact Package (No-Replicate)",
   "upload_type": "software",
-  "description": "Code, experimental settings, run logs, full result tables, figures, statistical tests, and raw Pareto-front CSV archives for the TEVC portfolio-optimization study.",
+  "description": "Code, settings, precomputed run outputs, result tables, figures, statistical tests, and raw Pareto-front archives for inspecting the TEVC portfolio-optimization study. This archive is not a fully automated end-to-end reproduction pipeline.",
   "creators": [
     {
       "name": "Chen, Yi-Ting"

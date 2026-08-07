@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 
 
-ROOT = Path(r"C:\Users\yiting\Documents\Playground")
+ROOT = Path(r".")
 OUT_ROOT = ROOT / "p0_lite_outputs" / "synthetic_constrained_portfolio"
 REPORT = OUT_ROOT / "experiment_A_report_20260703_081032"
 MANIFEST = ROOT / "data" / "synthetic_constrained_portfolio" / "manifest.csv"

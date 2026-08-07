@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 base = Path(r"\\wsl$\Ubuntu\home\yiting\lab\PEATSD\fig4_uf_lsmop_combined\raw")
-out = Path(r"C:\Users\yiting\Documents\Playground")
+out = Path(r".")
 nis_values = [10, 20, 30, 40, 50]
 colors = {10:'#1f77b4', 20:'#ff7f0e', 30:'#2ca02c', 40:'#d62728', 50:'#9467bd'}
 problems_by_group = {

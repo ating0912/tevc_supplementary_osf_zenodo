@@ -113,9 +113,8 @@ fprintf('Final summary: %s\n',fullfile(cfg.outRoot,'bayesian_config_final_test_s
 end
 
 function thetaPath = defaultThetaPath()
-candidates = { ...
-    'C:\Users\yiting\Desktop\NCHU\lab\TEVC\excel\TEVC_P0_L24_Orthogonal_Theta_Configurations.xlsx', ...
-    'C:\Users\yiting\Desktop\NCHU\lab\TEVC\data\TEVC_P0_L24_Orthogonal_Theta_Configurations.xlsx'};
+repoRoot = fileparts(fileparts(mfilename('fullpath')));
+candidates = {fullfile(repoRoot,'external_data','TEVC_P0_L24_Orthogonal_Theta_Configurations.xlsx')};
 thetaPath = candidates{1};
 for i = 1:numel(candidates)
     if exist(candidates{i},'file')

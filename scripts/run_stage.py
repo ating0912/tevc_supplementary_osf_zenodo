@@ -10,28 +10,36 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 STAGES = {
-    "generate_instances": "Build or verify the 192 synthetic instances and split manifest.",
-    "generate_labels": "Recompute train/validation theta labels from raw run metrics.",
-    "train_selector_no_replicate": "Train the formal no-replicate selector.",
-    "run_final_experiment": "Run Experiment A/B/C/ablation/real-market optimizers.",
-    "compute_metrics": "Compute HV, IGD, PF Overlap, PF Drift, EAF width, diversity, runtime, and market metrics.",
-    "run_statistical_tests": "Run Friedman, Wilcoxon, Holm correction, and Vargha-Delaney A12 analyses.",
-    "generate_tables": "Build paper-ready CSV/XLSX tables.",
-    "generate_figures": "Build paper-ready figures.",
+    "generate_instances": "Artifacts for the 192 synthetic instances and split manifest.",
+    "generate_labels": "Artifacts for train/validation theta-label generation.",
+    "train_selector_no_replicate": "Artifacts for the formal no-replicate selector.",
+    "run_final_experiment": "Artifacts for Experiment A/B/C, ablation, and real-market runs.",
+    "compute_metrics": "Artifacts for optimization and market metrics.",
+    "run_statistical_tests": "Artifacts for Friedman, Wilcoxon-Holm, and effect-size analyses.",
+    "generate_tables": "Archived paper-ready tables.",
+    "generate_figures": "Archived paper-ready figures.",
 }
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(
+        description="Audit the archived package artifacts associated with one documented stage."
+    )
     parser.add_argument("--stage", required=True, choices=sorted(STAGES))
-    parser.add_argument("--audit-only", action="store_true", help="Only run the package audit for this skeleton.")
+    parser.add_argument(
+        "--audit-only",
+        action="store_true",
+        help="Required safety flag: inspect precomputed artifacts without launching research jobs.",
+    )
     args = parser.parse_args()
+    if not args.audit_only:
+        parser.error(
+            "This command audits precomputed artifacts only. Pass --audit-only; "
+            "use the producer scripts listed in manifest/source_file_map.csv for reruns."
+        )
     print(f"Stage: {args.stage}")
     print(STAGES[args.stage])
     subprocess.check_call([sys.executable, str(ROOT / "scripts" / "check_package.py")])
-    if args.audit_only:
-        return
-    print("This wrapper records the official order. Connect the heavy runner listed in manifest/source_file_map.csv for this stage before full archive release.")
 
 
 if __name__ == "__main__":

@@ -12,7 +12,7 @@ from docx.oxml.ns import qn
 from docx.shared import Inches, Pt, RGBColor
 
 
-ROOT = r"C:\Users\yiting\Documents\Playground"
+ROOT = r"."
 SYN_DIR = os.path.join(ROOT, "p0_lite_outputs", "synthetic_constrained_portfolio", "experiment_A_report_20260705_094925")
 OR_DIR = os.path.join(ROOT, "p0_lite_outputs", "orlib_constrained_portfolio", "experiment_A_orlib_report_20260705_235837")
 OUT_DIR = os.path.join(ROOT, "docx_outputs")
@@ -405,7 +405,7 @@ def main():
     add_path(doc, "Synthetic manifest", os.path.join(ROOT, "data", "synthetic_constrained_portfolio", "manifest.csv"))
     add_path(doc, "Synthetic report folder", SYN_DIR)
     doc.add_paragraph("OR-Library 資料只使用 port1.txt 到 port5.txt，並以固定 K = 5, 10, 20, 30 展開為 20 個 portfolio test instances。")
-    add_path(doc, "OR-Library source folder", r"C:\Users\yiting\Desktop\NCHU\lab\TEVC\OR-Library")
+    add_path(doc, "OR-Library source folder", os.environ.get("TEVC_ORLIB_SOURCE", os.path.join(ROOT, "data", "orlib_constrained_portfolio")))
     add_path(doc, "Workspace OR-Library data folder", os.path.join(ROOT, "data", "orlib_constrained_portfolio"))
     add_path(doc, "OR-Library manifest", os.path.join(ROOT, "data", "orlib_constrained_portfolio", "manifest.csv"))
 

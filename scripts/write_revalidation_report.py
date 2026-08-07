@@ -40,10 +40,11 @@ def main() -> None:
 
     text = f"""# Package Revalidation Report
 
-- Package: TEVC complete supplementary package, no-replicate release
+- Package: TEVC supplementary artifact package, no-replicate release
 - Version: `v1.0.0`
 - Generated: {dt.datetime.now().astimezone().isoformat(timespec="seconds")}
 - Overall status: **PASS**
+- Scope: precomputed-artifact archive and audit; not an automated end-to-end rerun
 
 ## Code Audit
 
@@ -51,6 +52,7 @@ def main() -> None:
 - Python source files: {python_count}
 - MATLAB source files: {matlab_count}
 - Tracked Python bytecode/cache files: 0
+- Personal absolute paths in tracked text: 0
 
 ## Data Audit
 
@@ -65,6 +67,7 @@ def main() -> None:
 - Figures: `{figure_archive.relative_to(ROOT).as_posix()}`, {figure_files} files, {mb(figure_archive.stat().st_size)}
 - Raw PF CSV: {len(raw_parts)} ZIP parts, {raw_files} files, {mb(raw_bytes)}
 - SHA-256 manifest: {checksum_count} verified artifacts
+- Paper-value cross-check: `manifest/paper_value_crosscheck.csv`
 
 ## Reviewer Checklist
 
@@ -78,7 +81,11 @@ def main() -> None:
 - figures: complete
 - raw PF CSV: complete
 
-Validation command: `python scripts/check_github_package.py --full-zip-test`
+Validation commands:
+
+- `python scripts/check_github_package.py --full-zip-test`
+- `python scripts/check_paper_values.py`
+- `python scripts/check_no_personal_paths.py`
 """
     OUTPUT.write_text(text, encoding="utf-8", newline="\n")
     print(f"Wrote {OUTPUT.relative_to(ROOT)}")

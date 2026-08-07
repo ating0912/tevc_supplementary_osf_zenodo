@@ -1,7 +1,7 @@
 @echo off
 setlocal
 
-set "ROOT=C:\Users\yiting\Documents\Playground"
+set "ROOT=."
 set "METHOD=%~1"
 set "SMOKE=%~2"
 set "SCRIPT="

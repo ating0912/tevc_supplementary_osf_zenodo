@@ -14,7 +14,7 @@ from docx.oxml.ns import qn
 from docx.shared import Inches, Pt, RGBColor
 
 
-ROOT = Path(r"C:\Users\yiting\Documents\Playground")
+ROOT = Path(r".")
 OUT = ROOT / "TEVC_P0_lite_研究程式碼位置與流程.docx"
 
 BLUE = RGBColor(46, 116, 181)
@@ -220,7 +220,7 @@ def add_title(doc: Document) -> None:
 
     p = doc.add_paragraph()
     p.paragraph_format.space_after = Pt(10)
-    run = p.add_run("更新日期：2026-06-27｜工作目錄：C:\\Users\\yiting\\Documents\\Playground")
+    run = p.add_run("更新日期：2026-06-27｜工作目錄：.")
     run.font.size = Pt(10)
     run.font.color.rgb = MUTED
 
@@ -241,9 +241,9 @@ def build() -> None:
         doc,
         ["項目", "位置 / 說明"],
         [
-            ["研究程式碼根目錄", r"C:\Users\yiting\Documents\Playground"],
-            ["PlatEMO 版本", r"C:\Users\yiting\Documents\Playground\PlatEMO_v2.9.0\PlatEMO"],
-            ["主要輸出根目錄", r"C:\Users\yiting\Documents\Playground\p0_lite_outputs"],
+            ["研究程式碼根目錄", r"."],
+            ["PlatEMO 版本", r"PlatEMO_v2.9.0\PlatEMO"],
+            ["主要輸出根目錄", r"p0_lite_outputs"],
         ],
         [2300, 7060],
     )
@@ -310,26 +310,26 @@ def build() -> None:
 
     doc.add_heading("6.2 執行 OR-Library port1 baseline", level=2)
     for cmd in [
-        "matlab -batch \"cd('C:\\Users\\yiting\\Documents\\Playground'); run_p0_lite_port1_nsga2;\"",
-        "matlab -batch \"cd('C:\\Users\\yiting\\Documents\\Playground'); run_p0_lite_port1_spea2;\"",
-        "matlab -batch \"cd('C:\\Users\\yiting\\Documents\\Playground'); run_p0_lite_port1_moead;\"",
-        "matlab -batch \"cd('C:\\Users\\yiting\\Documents\\Playground'); run_p0_lite_port1_gde3;\"",
-        "matlab -batch \"cd('C:\\Users\\yiting\\Documents\\Playground'); run_p0_lite_port1_ecmade_moo;\"",
+        "matlab -batch \"cd('.'); run_p0_lite_port1_nsga2;\"",
+        "matlab -batch \"cd('.'); run_p0_lite_port1_spea2;\"",
+        "matlab -batch \"cd('.'); run_p0_lite_port1_moead;\"",
+        "matlab -batch \"cd('.'); run_p0_lite_port1_gde3;\"",
+        "matlab -batch \"cd('.'); run_p0_lite_port1_ecmade_moo;\"",
     ]:
         add_command(doc, cmd)
 
     doc.add_heading("6.3 執行 synthetic baseline", level=2)
     for cmd in [
-        "matlab -batch \"cd('C:\\Users\\yiting\\Documents\\Playground'); run_p0_lite_synthetic_nsga2;\"",
-        "matlab -batch \"cd('C:\\Users\\yiting\\Documents\\Playground'); run_p0_lite_synthetic_spea2;\"",
-        "matlab -batch \"cd('C:\\Users\\yiting\\Documents\\Playground'); run_p0_lite_synthetic_moead;\"",
-        "matlab -batch \"cd('C:\\Users\\yiting\\Documents\\Playground'); run_p0_lite_synthetic_gde3;\"",
-        "matlab -batch \"cd('C:\\Users\\yiting\\Documents\\Playground'); run_p0_lite_synthetic_ecmade_moo;\"",
+        "matlab -batch \"cd('.'); run_p0_lite_synthetic_nsga2;\"",
+        "matlab -batch \"cd('.'); run_p0_lite_synthetic_spea2;\"",
+        "matlab -batch \"cd('.'); run_p0_lite_synthetic_moead;\"",
+        "matlab -batch \"cd('.'); run_p0_lite_synthetic_gde3;\"",
+        "matlab -batch \"cd('.'); run_p0_lite_synthetic_ecmade_moo;\"",
     ]:
         add_command(doc, cmd)
 
     doc.add_heading("6.4 後處理與繪圖", level=2)
-    add_command(doc, "matlab -batch \"cd('C:\\Users\\yiting\\Documents\\Playground'); postprocess_p0_lite_port1_metrics_figures;\"")
+    add_command(doc, "matlab -batch \"cd('.'); postprocess_p0_lite_port1_metrics_figures;\"")
     doc.add_paragraph("目前完整後處理主要對 port1 結果使用；synthetic 結果已用相同輸出檔命名，後續可擴充共用後處理。")
 
     doc.add_heading("7. 輸出位置與檔案", level=1)
@@ -373,7 +373,7 @@ def build() -> None:
         [2300, 3860, 3200],
     )
     doc.add_paragraph("例：只跑 test split 前 4 題 NSGA-II：")
-    add_command(doc, "matlab -batch \"cd('C:\\Users\\yiting\\Documents\\Playground'); SYNTHETIC_SPLITS={'test'}; SYNTHETIC_MAX_INSTANCES=4; run_p0_lite_synthetic_nsga2;\"")
+    add_command(doc, "matlab -batch \"cd('.'); SYNTHETIC_SPLITS={'test'}; SYNTHETIC_MAX_INSTANCES=4; run_p0_lite_synthetic_nsga2;\"")
 
     doc.add_heading("9. 目前研究流程狀態", level=1)
     add_table(

@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { SpreadsheetFile, Workbook } from "@oai/artifact-tool";
 
-const root = "C:\\Users\\yiting\\Documents\\Playground";
+const root = ".";
 const outDir = path.join(root, "p0_lite_outputs", "experiment_b_configuration_summary_20260713");
 
 const sheets = [

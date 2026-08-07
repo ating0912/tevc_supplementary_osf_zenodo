@@ -2,7 +2,7 @@ function run_theta24_single_problem_test()
 % Run one OR-Library problem with the 24 theta configurations from Excel.
 
 scriptDir = fileparts(mfilename('fullpath'));
-thetaPath = 'C:\Users\yiting\Desktop\NCHU\lab\TEVC\TEVC_P0_Selected_Theta_fractional_24.xlsx';
+thetaPath = fullfile(fileparts(scriptDir),'external_data','TEVC_P0_Selected_Theta_fractional_24.xlsx');
 dataPath = fullfile(scriptDir,'data','orlib','port1.txt');
 platemoRoot = fullfile(scriptDir,'PlatEMO_v2.9.0','PlatEMO');
 

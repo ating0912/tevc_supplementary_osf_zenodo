@@ -13,7 +13,7 @@ from docx.oxml.ns import qn
 from docx.shared import Inches, Pt, RGBColor
 
 
-ROOT = r"C:\Users\yiting\Documents\Playground"
+ROOT = r"."
 SYN_DIR = os.path.join(ROOT, "p0_lite_outputs", "synthetic_constrained_portfolio", "experiment_A_report_20260705_094925")
 OR_DIR = os.path.join(ROOT, "p0_lite_outputs", "orlib_constrained_portfolio", "experiment_A_orlib_report_20260705_235837")
 OUT_DIR = os.path.join(ROOT, "docx_outputs")
@@ -487,7 +487,7 @@ def build_doc():
         "OR-Library 資料只使用正式 port1.txt 到 port5.txt。這五個原始檔已複製到 workspace，並由 OR-Library manifest 展開為 "
         "5 個 port x 4 個固定 K levels 的 20 個測試 instance。固定 K levels 為 K = 5, 10, 20, 30。"
     )
-    add_path_paragraph(doc, "OR-Library source folder", r"C:\Users\yiting\Desktop\NCHU\lab\TEVC\OR-Library")
+    add_path_paragraph(doc, "OR-Library source folder", os.environ.get("TEVC_ORLIB_SOURCE", os.path.join(ROOT, "data", "orlib_constrained_portfolio")))
     add_path_paragraph(doc, "Workspace OR-Library data folder", os.path.join(ROOT, "data", "orlib_constrained_portfolio"))
     add_path_paragraph(doc, "OR-Library manifest", os.path.join(ROOT, "data", "orlib_constrained_portfolio", "manifest.csv"))
     add_path_paragraph(doc, "OR-Library final report folder", OR_DIR)

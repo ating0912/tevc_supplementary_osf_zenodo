@@ -1,6 +1,6 @@
 $ErrorActionPreference = "Stop"
 
-$Root = "C:\Users\yiting\Documents\Playground"
+$Root = "."
 $OutRoot = Join-Path $Root "p0_lite_outputs\tevc_pdf_direct_ablation_full_20260717"
 $MatlabCmd = @"
 cd('$Root');

@@ -6,7 +6,7 @@ param(
 
 $ErrorActionPreference = 'Stop'
 
-$root = 'C:\Users\yiting\Documents\Playground'
+$root = '.'
 $logDir = Join-Path $root 'p0_lite_outputs\synthetic_constrained_portfolio\logs'
 if (!(Test-Path -LiteralPath $logDir)) {
     New-Item -ItemType Directory -Path $logDir | Out-Null

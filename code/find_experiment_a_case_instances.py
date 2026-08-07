@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 
 
-ROOT = r"C:\Users\yiting\Documents\Playground"
+ROOT = r"."
 SYN_DIR = os.path.join(
     ROOT,
     "p0_lite_outputs",

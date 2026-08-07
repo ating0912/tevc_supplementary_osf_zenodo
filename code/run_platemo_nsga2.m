@@ -1,6 +1,6 @@
 % Run PlatEMO's NSGA-II on ZDT1 and save the final objective values.
 % Command:
-%   matlab -batch "run('C:\Users\yiting\Documents\Playground\run_platemo_nsga2.m')"
+%   matlab -batch "run('run_platemo_nsga2.m')"
 
 clear; clc;
 

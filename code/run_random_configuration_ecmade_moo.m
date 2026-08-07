@@ -20,7 +20,7 @@ platemoRoot = fullfile(scriptDir,'PlatEMO_v2.9.0','PlatEMO');
 
 cfg = struct();
 cfg.method = 'RandomConfig_ECMADE_MOO';
-cfg.thetaPath = 'C:\Users\yiting\Desktop\NCHU\lab\TEVC\data\TEVC_P0_L24_Orthogonal_Theta_Configurations.xlsx';
+cfg.thetaPath = fullfile(fileparts(scriptDir),'external_data','TEVC_P0_L24_Orthogonal_Theta_Configurations.xlsx');
 cfg.thetaSheet = 'L24_Theta_Config';
 cfg.manifestPath = fullfile(scriptDir,'data','synthetic_constrained_portfolio','manifest.csv');
 cfg.outRoot = fullfile(scriptDir,'p0_lite_outputs', ...

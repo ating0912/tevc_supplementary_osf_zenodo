@@ -1,7 +1,7 @@
 import os
 
 
-ROOT = r"C:\Users\yiting\Documents\Playground"
+ROOT = r"."
 os.environ.setdefault("EXPERIMENT_A_ROOT", ROOT)
 os.environ.setdefault("EXPERIMENT_A_OUT_ROOT", os.path.join(ROOT, "p0_lite_outputs", "orlib_constrained_portfolio"))
 os.environ.setdefault("EXPERIMENT_A_MANIFEST", os.path.join(ROOT, "data", "orlib_constrained_portfolio", "manifest.csv"))

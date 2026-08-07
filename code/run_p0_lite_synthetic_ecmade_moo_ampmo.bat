@@ -3,7 +3,7 @@ setlocal enabledelayedexpansion
 
 rem Sequential launcher for rerunning updated ECMADE-MOO and A-MPMO only.
 
-set "ROOT=C:\Users\yiting\Documents\Playground"
+set "ROOT=."
 set "OUT=%ROOT%\p0_lite_outputs\synthetic_constrained_portfolio"
 set "LOGDIR=%OUT%\logs"
 

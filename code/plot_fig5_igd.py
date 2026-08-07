@@ -4,7 +4,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 
 base = Path(r"\\wsl$\Ubuntu\home\yiting\lab\PEATSD\fig5_ng_outputs")
-out = Path(r"C:\Users\yiting\Documents\Playground")
+out = Path(r".")
 agg_path = base / "fig5_ng_aggregate.csv"
 
 rows = []

@@ -34,8 +34,7 @@ DEFAULT_LABELS = Path(
 DEFAULT_MANIFEST = Path("data/synthetic_constrained_portfolio/manifest_70_15_15.csv")
 DEFAULT_ASSIGNMENT_MANIFEST = Path("data/synthetic_constrained_portfolio/manifest.csv")
 DEFAULT_THETA = Path(
-    r"C:\Users\yiting\Desktop\NCHU\lab\TEVC\excel"
-    r"\TEVC_P0_L24_Orthogonal_Theta_Configurations.xlsx"
+    "external_data/TEVC_P0_L24_Orthogonal_Theta_Configurations.xlsx"
 )
 DEFAULT_OUTPUT = Path("p0_lite_outputs/meta_designed_ecmade_moo_training")
 
@@ -79,13 +78,7 @@ def resolve(path: Path, root: Path) -> Path:
 
 
 def theta_excel_default(root: Path) -> Path:
-    candidates = [
-        DEFAULT_THETA,
-        Path(
-            r"C:\Users\yiting\Desktop\NCHU\lab\TEVC\data"
-            r"\TEVC_P0_L24_Orthogonal_Theta_Configurations.xlsx"
-        ),
-    ]
+    candidates = [resolve(DEFAULT_THETA, root)]
     for path in candidates:
         if path.exists():
             return path

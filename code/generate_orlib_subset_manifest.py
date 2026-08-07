@@ -4,8 +4,8 @@ import os
 import shutil
 
 
-ROOT = r"C:\Users\yiting\Documents\Playground"
-DEFAULT_SOURCE = r"C:\Users\yiting\Desktop\NCHU\lab\TEVC\OR-Library"
+ROOT = r"."
+DEFAULT_SOURCE = os.environ.get("TEVC_ORLIB_SOURCE", os.path.join(ROOT, "external_data", "OR-Library"))
 DEFAULT_OUTPUT = os.path.join(ROOT, "data", "orlib_constrained_portfolio")
 PORT_FILES = [f"port{i}.txt" for i in range(1, 6)]
 K_VALUES = [5, 10, 20, 30]

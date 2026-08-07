@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { Workbook, SpreadsheetFile } from "@oai/artifact-tool";
 
-const root = "C:/Users/yiting/Documents/Playground/nsga2_outputs";
+const root = "nsga2_outputs";
 const outputPath = path.join(root, "NSGAII_three_versions_vs_paper_by_dataset.xlsx");
 
 function parseCsv(text) {
