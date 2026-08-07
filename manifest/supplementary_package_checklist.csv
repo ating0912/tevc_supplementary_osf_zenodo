@@ -1,10 +1,10 @@
-﻿requested_item,status,package_location,notes
-code,complete_for_workspace_research_code,code/ and manifest/code_inventory.csv,All source-like research scripts from the workspace root and selected research tool folders are copied. Third-party dependencies are versioned separately.
-README,complete,README.md and README.zh-TW.md,English and Traditional Chinese README files are included.
-environment.yml,complete,environment.yml,Python environment is included.
-MATLAB/PlatEMO version,complete,system/software_environment.md,MATLAB R2020b Update 8 is recorded from local log; PlatEMO folders present are recorded.
-CPU/GPU/OS,complete,system/software_environment.md,"OS, CPU logical processor count, RAM, and GPU adapters are recorded."
-run logs,included,logs/full_run_logs.zip,Actual run logs are packaged.
-tables,complete_for_summary_tables,paper_outputs/ and experiments/,Paper summary tables and statistical-test tables are included. Large run-level tables remain listed in manifest/external_artifacts.csv if not duplicated as standalone files.
-figures,included,figures/ and figures/paper_figures.zip,Paper figure files and a figure archive are included.
-raw PF csv,included,raw_pf/raw_pf_csv.zip,Actual raw Pareto-front/objective/archive CSV files are packaged.
+requested_item,status,package_location,notes
+code,complete,code/ and manifest/code_inventory.csv,Python MATLAB PowerShell batch and analysis sources are included; full third-party PlatEMO distributions must be installed separately.
+README,complete,README.md and README.zh-TW.md,English and Traditional Chinese documentation are included.
+environment.yml,complete,environment.yml and requirements.txt,Python versions and dependencies are recorded.
+MATLAB/PlatEMO version,complete,system/software_environment.md,MATLAB R2020b Update 8 plus PlatEMO v2.9.0 and v4.3 roles are recorded.
+CPU/GPU/OS,complete,system/software_environment.md,"OS, CPU, RAM, and GPU adapters are recorded."
+run logs,complete,logs/full_run_logs.zip,Actual run logs are included through Git LFS.
+tables,complete,labels/ experiments/ real_market/ and paper_outputs/,Run-level metrics summary tables and statistical-test tables are included.
+figures,complete,figures/ and figures/paper_figures.zip,Individual paper figures and the complete figure archive are included.
+raw PF csv,complete,raw_pf/raw_pf_csv_part*.zip,Raw Pareto-front objective archive and population CSV files are included as validated multipart ZIP archives through Git LFS.

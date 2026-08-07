@@ -1,9 +1,18 @@
 cff-version: 1.2.0
 title: TEVC Reproducibility Package
-message: If you use this package, please cite the associated TEVC paper.
+message: If you use this package, please cite this software release and the associated TEVC paper.
 type: software
 authors:
   - family-names: Chen
     given-names: Yi-Ting
-date-released: 2026-07-31
+repository-code: https://github.com/ating0912/tevc_supplementary_osf_zenodo
+url: https://github.com/ating0912/tevc_supplementary_osf_zenodo
+version: 1.0.0
+date-released: 2026-08-07
 license: MIT
+keywords:
+  - reproducibility
+  - multi-objective optimization
+  - portfolio optimization
+  - ECMADE-MOO
+  - TEVC

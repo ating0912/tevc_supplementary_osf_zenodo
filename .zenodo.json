@@ -1,0 +1,21 @@
+{
+  "title": "TEVC Complete Supplementary and Reproducibility Package (No-Replicate)",
+  "upload_type": "software",
+  "description": "Code, experimental settings, run logs, full result tables, figures, statistical tests, and raw Pareto-front CSV archives for the TEVC portfolio-optimization study.",
+  "creators": [
+    {
+      "name": "Chen, Yi-Ting"
+    }
+  ],
+  "access_right": "open",
+  "license": "MIT",
+  "version": "1.0.0",
+  "publication_date": "2026-08-07",
+  "keywords": [
+    "reproducibility",
+    "multi-objective optimization",
+    "portfolio optimization",
+    "ECMADE-MOO",
+    "TEVC"
+  ]
+}

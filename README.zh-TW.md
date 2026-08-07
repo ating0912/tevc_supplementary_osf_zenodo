@@ -1,75 +1,80 @@
-# TEVC 可重現性套件 - GitHub 版本
+# TEVC 完整補充資料與可重現性套件（No-Replicate）
 
-這個資料夾是 TEVC 投資組合最佳化研究的 GitHub 友善版 **no-replicate** 可重現性套件。它提供審稿者可閱讀、可檢查的控制層，讓第三方能追蹤論文結果如何由實驗設定、selector 輸入、指標計算、統計檢定與論文表格產生。
+[English](README.md)
 
-這是輕量 GitHub 版本，因此不直接放入大型檔案，例如 frozen model binary、完整 run-level CSV、原始 Pareto front/archive 檔案與市場價格資料。這些大型檔案統一列在 `manifest/external_artifacts.csv`。
+本 repository 是 TEVC 投資組合最佳化研究的完整 supplementary/reproducibility package，將實驗設定、可執行研究程式、run-level 輸出、指標表格、統計檢定、論文圖表與原始 Pareto front（PF）CSV 串接在同一份可稽核套件中。
 
 ## 專案用意
 
-本專案的目的，是讓 TEVC 研究的主要結果可以被第三方檢查與重現。套件整理了 synthetic portfolio instances、ECMADE-MOO theta 選擇、no-replicate selector 訓練、最終 synthetic comparison、消融檢查，以及真實市場 rolling-window validation 的實驗協定與輸出位置。
-
-核心研究問題是：在不把 synthetic `replicate` 識別欄位作為 selector input 的前提下，meta-designed、stability-aware 的 ECMADE-MOO configuration protocol 是否仍能改善穩定性與 Pareto front 品質。
+本研究檢驗 meta-designed、stability-aware 的 ECMADE-MOO 組態協定，是否能在合成限制型投資組合問題與真實市場 rolling windows 中提升穩定性及 Pareto-front 品質。正式 selector 採用 **no-replicate** 版本：`replicate` 僅保留作為合成 instance 的來源識別，不會作為 selector 輸入特徵。
 
 ## 主要結論
 
-- 這份 GitHub package 是正式 **no-replicate** 版本：selector feature list 不包含 `replicate`，而 synthetic 官方切分維持 112 train / 48 validation / 32 test instances。
-- 在 32 個 test synthetic instances 的 final comparison 中，`ExperimentC_NoReplicate_ECMADE_MOO` 在五種 ECMADE-MOO configuration protocols 中取得最佳 mean stability-weighted rank（`mean_StabilityWeightedRank = 2.375`），並並列最佳 mean rank-based composite rank（`mean_RankBasedCompositeRank = 2.46875`）。
-- synthetic no-replicate comparison 中，`ExperimentC_NoReplicate_ECMADE_MOO` 對應 960 runs；test instances 的 theta predictions 與 selected theta 已放在 `selector/`。
-- 在 real-market configured ECMADE-MOO validation 中，不同 protocol 的 RankScore 差異具有統計顯著性（`Friedman chi-square = 24.6966`，`p = 1.7868e-05`，`n = 33` universe-window units）。但依目前 summary，stability-aware protocol 不是 real-market overall RankScore 最佳者，因此這部分應解讀為外部 robustness evidence，而不是全面優勢宣稱。
+- 正式合成資料切分為 112 個 training、48 個 validation、32 個 held-out test instances。
+- 在 held-out synthetic comparison 中，`ExperimentC_NoReplicate_ECMADE_MOO` 在五種組態協定中得到最佳平均 stability-weighted rank（`2.375`），並列最佳平均 rank-based composite rank（`2.46875`）。
+- 合成 no-replicate 比較包含 `ExperimentC_NoReplicate_ECMADE_MOO` 的 960 次 runs；test instance 的 theta 預測與最終選擇均放在 `selector/`。
+- 真實市場 RankScore 的協定差異達統計顯著（`Friedman chi-square = 24.6966`、`p = 1.7868e-05`、`n = 33`）。但 stability-aware 協定並非 overall real-market RankScore 的最佳方法，因此此結果應解讀為外部穩健性證據，而不是全面優越性主張。
 
-## 版本定義
+## 套件內容
 
-- Selector 版本：**no-replicate**
-- 正式 selector 輸入規則：`replicate` 欄位 **不作為 selector feature**
-- 官方資料切分依據：`data/synthetic/split_manifest.csv`
-- Synthetic split：112 train / 48 validation / 32 test instances
+| Reviewer 要求 | 套件位置 |
+| --- | --- |
+| 研究程式碼 | `code/`、`manifest/code_inventory.csv` |
+| 中英文 README | `README.md`、`README.zh-TW.md` |
+| Python 環境 | `environment.yml`、`requirements.txt` |
+| MATLAB、PlatEMO、CPU、GPU、OS | `system/software_environment.md` |
+| 實驗設定 | `configs/` |
+| 正式 split 與 selector 輸入 | `data/synthetic/`、`selector/`、`labels/` |
+| 完整 run-level tables | `labels/`、`experiments/`、`real_market/` |
+| 執行 logs | `logs/full_run_logs.zip` |
+| 論文表格與統計檢定 | `paper_outputs/`、`experiments/`、`real_market/` |
+| 論文 figures | `figures/`、`figures/paper_figures.zip` |
+| 原始 PF/objective/archive CSV | `raw_pf/raw_pf_csv_part*.zip` |
+| 完整性雜湊 | `manifest/artifact_checksums.sha256` |
 
-注意：`replicate` 欄位仍可出現在 synthetic instance manifest 中，因為它是資料生成與識別資訊；但在這個 no-replicate 版本中，它不可出現在 `selector/feature_columns_no_replicate.json`。
-
-## 內含內容
-
-- `configs/`：實驗設定檔
-- `data/synthetic/split_manifest.csv`：官方 synthetic split manifest
-- `configs/theta_L24.csv`：L24 的 24 組 theta candidate
-- `selector/`：正式 no-replicate selector 的 feature columns 與 prediction tables
-- label formula 與 RNG policy
-- 論文用 summary tables
-- 可放入 GitHub 的小型統計檢定結果
-- `samples/`：大型 CSV 的小樣本
-- `manifest/external_artifacts.csv`：列出未放入 GitHub 的大型檔案與還原位置
-
-## 未放入 GitHub 的大型檔案
-
-大型 artifacts 已排除於 git 之外，並列於：
-
-```text
-manifest/external_artifacts.csv
-```
-
-正式封存前，請將這些檔案上傳至 Zenodo、OSF、GitHub Releases 或 Git LFS，並補上 `external_url` 欄位。
-
-## 快速檢查
+ZIP archives 與 frozen selector 使用 Git LFS 儲存。raw PF 資料拆成數個可獨立驗證的 ZIP parts，以避免超過通用單一 LFS object 限制。下載前請先安裝 Git LFS：
 
 ```bash
+git lfs install
+git clone https://github.com/ating0912/tevc_supplementary_osf_zenodo.git
+cd tevc_supplementary_osf_zenodo
+git lfs pull
+```
+
+## 建立環境
+
+```bash
+conda env create -f environment.yml
+conda activate tevc-reproducibility
+```
+
+記錄的 MATLAB 環境為 MATLAB 9.9.0.2037887（R2020b）Update 8。PlatEMO v2.9.0 是 R2020b baseline 實作；PlatEMO v4.3 用於相容性及 reference-PF 檢查。完整軟硬體資訊請見 `system/software_environment.md`。
+
+## 驗證套件
+
+```bash
+python scripts/fetch_artifacts.py
 python scripts/check_github_package.py
+python scripts/check_github_package.py --full-zip-test
 ```
 
-這支程式會檢查 GitHub 套件結構、確認官方 split 為 112/48/32，並確認正式 no-replicate selector feature list 不包含 `replicate`。
+驗證器會檢查必要檔案、artifact 大小與 SHA-256、ZIP 可讀性、112/48/32 split、no-replicate 特徵政策及主要 CSV 形狀。`--full-zip-test` 會額外對 archive 中每個成員執行 CRC 檢查，可能需要數分鐘。
 
-## 完整重現
+## 可重現流程
 
-完整本地 package 可由上層 workspace 重新建立：
+1. `configs/` 固定實驗設定，`manifest/rng_policy.md` 記錄 RNG 政策。
+2. `data/synthetic/split_manifest.csv` 記錄正式資料切分；`code/generate_synthetic_portfolio_instances.py` 提供確定性的合成 instance 產生程式。
+3. MATLAB/Python runners 位於 `code/`；`manifest/source_file_map.csv` 對應各輸出與產生程式。
+4. `labels/`、`experiments/`、`real_market/` 收錄 run-level metrics，原始執行記錄封存在 `logs/`。
+5. 各實驗資料夾包含 Friedman、Wilcoxon-Holm 等統計檢定輸出。
+6. `paper_outputs/` 收錄論文表格，`figures/` 與 `raw_pf/` 收錄圖檔及原始 PF CSV archive。
 
-```bash
-python build_tevc_reproducibility_package.py
-python build_tevc_github_package.py
-```
+套件中的 precomputed outputs 是論文結果的固定快照。完整重新執行 optimizer 需要 MATLAB R2020b 與上述 PlatEMO 版本，執行時間會依硬體能力而異，且可能相當長。
 
-若要執行完整重跑，請先還原 `manifest/external_artifacts.csv` 中列出的外部大型檔案，再使用完整 package 的 stage wrappers，或連接 `manifest/source_file_map.csv` 中列出的原始 MATLAB/Python runner。
+## 資料使用說明
 
-## 建議 GitHub 使用流程
+合成 instances、衍生指標與原始最佳化 fronts 可供研究驗證使用。由於資料供應商條款可能限制再散布，本套件不直接提供原始市場價格；套件已提供 `code/download_market_universe_prices.py`、市場設定、run archive 中的 ticker/universe metadata 與衍生結果，讓具有合法存取權限的使用者重建市場輸入。
 
-1. 將此資料夾內容作為 GitHub repository root。
-2. 大型輸出檔不要放入 git。
-3. 將大型 artifacts 另外上傳，並更新 `manifest/external_artifacts.csv`。
-4. 依論文投稿版本建立 release tag。
+## 引用與版本
+
+引用本套件時請使用 `CITATION.cff`。`v1.0.0` 是預定對應 TEVC supplementary submission 的固定版本；完成 Zenodo 封存後，可再將 DOI 補入 citation 與 README。

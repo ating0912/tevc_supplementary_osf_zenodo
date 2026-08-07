@@ -1,0 +1,59 @@
+{
+  "purpose": "Experiment C replicate feature audit and no-replicate retraining",
+  "seed": 20260717,
+  "train_labels": "C:\\Users\\yiting\\Documents\\Playground\\p0_lite_outputs\\theta24_70_15_15_training_label_full_20260706\\knowledge_base_parameter_report\\experiment_c_stability_regression_labels.csv",
+  "validation_labels": "C:\\Users\\yiting\\Documents\\Playground\\p0_lite_outputs\\theta24_70_15_15_validation_label_full_20260713\\knowledge_base_parameter_report\\experiment_c_stability_regression_labels.csv",
+  "manifest": "C:\\Users\\yiting\\Documents\\Playground\\data\\synthetic_constrained_portfolio\\manifest_70_15_15.csv",
+  "assignment_manifest": "C:\\Users\\yiting\\Documents\\Playground\\data\\synthetic_constrained_portfolio\\manifest.csv",
+  "old_selector_dir": "C:\\Users\\yiting\\Documents\\Playground\\p0_lite_outputs\\experiment_c_stability_selector_training",
+  "old_test_comparison": "C:\\Users\\yiting\\Documents\\Playground\\p0_lite_outputs\\experiment_c_stability_comparison_20260717\\overall_configuration_comparison.csv",
+  "variants": {
+    "full_selector_no_replicate": {
+      "label": "Full Selector (replicate removed)",
+      "include_replicate": false,
+      "drop_instance": false,
+      "drop_theta": false,
+      "shuffle_labels": false,
+      "official_candidate": true
+    },
+    "replicate_included_audit": {
+      "label": "Replicate-included audit",
+      "include_replicate": true,
+      "drop_instance": false,
+      "drop_theta": false,
+      "shuffle_labels": false,
+      "official_candidate": false
+    }
+  },
+  "feature_group_ablation_variants": {
+    "full_selector_no_replicate": {
+      "label": "Full Selector (replicate removed)",
+      "include_replicate": false,
+      "drop_instance": false,
+      "drop_theta": false,
+      "shuffle_labels": false
+    },
+    "no_instance_features": {
+      "label": "No instance features",
+      "include_replicate": false,
+      "drop_instance": true,
+      "drop_theta": false,
+      "shuffle_labels": false
+    },
+    "no_theta_features": {
+      "label": "No theta features",
+      "include_replicate": false,
+      "drop_instance": false,
+      "drop_theta": true,
+      "shuffle_labels": false
+    },
+    "randomized_labels": {
+      "label": "Randomized labels",
+      "include_replicate": false,
+      "drop_instance": false,
+      "drop_theta": false,
+      "shuffle_labels": true
+    }
+  },
+  "test_metric_rule": "Reuse previous Experiment C final-test metrics only when the new test theta assignment is identical to the previous official assignment."
+}

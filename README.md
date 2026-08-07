@@ -1,75 +1,80 @@
-# TEVC Reproducibility Package - GitHub Version
+# TEVC Complete Supplementary Package (No-Replicate)
 
-This repository contains the GitHub-ready **no-replicate** reproducibility package for the TEVC portfolio-optimization study. It provides the code-facing, reviewer-readable control layer for tracing the reported results from experimental settings to selector inputs, metrics, statistical tests, and paper-ready summary tables.
+[Traditional Chinese](README.zh-TW.md)
 
-This lightweight GitHub version intentionally excludes heavyweight artifacts such as frozen model binaries, full run-level CSVs, raw Pareto-front archives, and market-price files. Those files are listed in `manifest/external_artifacts.csv`.
+This repository is the complete supplementary and reproducibility package for the TEVC portfolio-optimization study. It connects the experimental settings, executable research code, run-level outputs, metric tables, statistical tests, figures, and raw Pareto-front (PF) CSV archives used to audit the reported results.
 
 ## Project Purpose
 
-The purpose of this project is to make the TEVC study reproducible and auditable. The package records the experimental protocol for synthetic portfolio instances, ECMADE-MOO theta selection, no-replicate selector training, final synthetic comparisons, ablation checks, and real-market rolling-window validation.
-
-The central methodological question is whether a meta-designed, stability-aware ECMADE-MOO configuration protocol can improve robustness and Pareto-front quality without relying on the synthetic `replicate` identifier as a selector input.
+The study evaluates whether a meta-designed, stability-aware ECMADE-MOO configuration protocol improves robustness and Pareto-front quality across synthetic constrained portfolio instances and rolling real-market windows. The formal selector is the **no-replicate** version: the synthetic `replicate` identifier is retained only for instance provenance and is excluded from selector inputs.
 
 ## Main Conclusions
 
-- The formal GitHub package is the **no-replicate** version: the selector feature list excludes `replicate`, while the official synthetic split remains 112 train / 48 validation / 32 test instances.
-- In the 32-instance synthetic final comparison, `ExperimentC_NoReplicate_ECMADE_MOO` achieves the best mean stability-weighted rank among the five ECMADE-MOO configuration protocols (`mean_StabilityWeightedRank = 2.375`) and ties the best mean rank-based composite rank (`mean_RankBasedCompositeRank = 2.46875`).
-- The synthetic no-replicate comparison is based on 960 runs for `ExperimentC_NoReplicate_ECMADE_MOO`, with all test-instance theta predictions and selections included in `selector/`.
-- In the real-market configured ECMADE-MOO validation, protocol differences are statistically detectable for RankScore (`Friedman chi-square = 24.6966`, `p = 1.7868e-05`, `n = 33` universe-window units). However, the stability-aware protocol is not the best real-market protocol by overall RankScore in the included summary; this result should be interpreted as external robustness evidence rather than a dominance claim.
+- The official synthetic split contains 112 training, 48 validation, and 32 held-out test instances.
+- On the held-out synthetic comparison, `ExperimentC_NoReplicate_ECMADE_MOO` has the best mean stability-weighted rank among the five configuration protocols (`2.375`) and ties the best mean rank-based composite rank (`2.46875`).
+- The reported synthetic comparison contains 960 runs for `ExperimentC_NoReplicate_ECMADE_MOO`; test-instance theta predictions and selected theta values are provided in `selector/`.
+- Real-market RankScore differences are statistically detectable (`Friedman chi-square = 24.6966`, `p = 1.7868e-05`, `n = 33`). The stability-aware protocol is not the best protocol by overall real-market RankScore, so this evidence supports robustness rather than universal dominance.
 
-## Version
+## Package Contents
 
-- Selector version: **no-replicate**
-- Formal selector input policy: the `replicate` field is **not** used as a selector feature.
-- Official split authority: `data/synthetic/split_manifest.csv`
-- Synthetic split: 112 train / 48 validation / 32 test instances.
+| Requirement | Location |
+| --- | --- |
+| Research code | `code/` and `manifest/code_inventory.csv` |
+| English and Chinese README | `README.md`, `README.zh-TW.md` |
+| Python environment | `environment.yml`, `requirements.txt` |
+| MATLAB, PlatEMO, CPU, GPU, OS | `system/software_environment.md` |
+| Experimental settings | `configs/` |
+| Official split and selector inputs | `data/synthetic/`, `selector/`, `labels/` |
+| Full run-level tables | `labels/`, `experiments/`, `real_market/` |
+| Run logs | `logs/full_run_logs.zip` |
+| Paper tables and statistical tests | `paper_outputs/`, `experiments/`, `real_market/` |
+| Paper figures | `figures/` and `figures/paper_figures.zip` |
+| Raw PF/objective/archive CSV | `raw_pf/raw_pf_csv_part*.zip` |
+| Integrity checksums | `manifest/artifact_checksums.sha256` |
 
-The `replicate` column may still appear in the synthetic instance manifest as a data-generation identifier. In this package, it must not appear in `selector/feature_columns_no_replicate.json`.
-
-## Included Files
-
-- Experiment configuration files in `configs/`.
-- Official synthetic split manifest in `data/synthetic/split_manifest.csv`.
-- L24 theta candidate table in `configs/theta_L24.csv`.
-- Formal no-replicate selector feature columns and prediction tables in `selector/`.
-- Label formula and RNG policy.
-- Paper-ready summary tables.
-- Statistical-test outputs that are small enough for GitHub.
-- Small CSV samples under `samples/` for large artifacts.
-- `manifest/external_artifacts.csv`, which lists every omitted large artifact and where it should be restored.
-
-## Excluded Large Artifacts
-
-Large artifacts are excluded from git and listed in:
-
-```text
-manifest/external_artifacts.csv
-```
-
-Before a full archival release, upload those files to Zenodo, OSF, GitHub Releases, or Git LFS and fill the `external_url` column.
-
-## Quick Validation
+The ZIP archives and the frozen selector are stored with Git LFS. The raw PF data is split into independently valid ZIP parts to stay below portable single-object limits. Install Git LFS before cloning:
 
 ```bash
+git lfs install
+git clone https://github.com/ating0912/tevc_supplementary_osf_zenodo.git
+cd tevc_supplementary_osf_zenodo
+git lfs pull
+```
+
+## Environment
+
+```bash
+conda env create -f environment.yml
+conda activate tevc-reproducibility
+```
+
+The recorded MATLAB environment is MATLAB 9.9.0.2037887 (R2020b) Update 8. PlatEMO v2.9.0 is the R2020b baseline implementation; PlatEMO v4.3 is retained for compatibility and reference-PF checks. See `system/software_environment.md` for the complete hardware and software record.
+
+## Validate the Package
+
+```bash
+python scripts/fetch_artifacts.py
 python scripts/check_github_package.py
+python scripts/check_github_package.py --full-zip-test
 ```
 
-This script checks the GitHub package structure, confirms the official 112/48/32 split, and verifies that the formal selector feature list excludes `replicate`.
+The validator checks required files, artifact sizes and SHA-256 hashes, ZIP readability, the 112/48/32 split, the no-replicate feature policy, and key CSV shapes. `--full-zip-test` additionally performs CRC testing of every archived member and may take several minutes.
 
-## Full Reproduction
+## Reproducibility Trace
 
-The complete local package can be rebuilt from the parent workspace with:
+1. Experimental settings are fixed in `configs/` and the RNG policy in `manifest/rng_policy.md`.
+2. The official synthetic allocation is recorded in `data/synthetic/split_manifest.csv`; deterministic instance generation code is in `code/generate_synthetic_portfolio_instances.py`.
+3. MATLAB/Python runners are in `code/`; `manifest/source_file_map.csv` maps package outputs to their producing scripts and source locations.
+4. Run-level metrics are provided in `labels/`, `experiments/`, and `real_market/`; original logs are archived in `logs/`.
+5. Statistical outputs are provided beside their experiment tables, including Friedman and Wilcoxon-Holm results.
+6. Paper-ready tables are in `paper_outputs/`; figures and raw PF files are in `figures/` and `raw_pf/`.
 
-```bash
-python build_tevc_reproducibility_package.py
-python build_tevc_github_package.py
-```
+The precomputed outputs are the authoritative paper snapshot. A full optimizer rerun requires MATLAB R2020b and the stated PlatEMO versions; runtime depends on machine capacity and can be substantial.
 
-For full reruns, restore external artifacts first, then use the stage wrappers copied from the full package or connect the original MATLAB/Python runners listed in `manifest/source_file_map.csv`.
+## Data Use
 
-## Recommended GitHub Workflow
+Synthetic instances, derived metrics, and raw optimization fronts are redistributed for research verification. Raw market prices are not redistributed because provider terms may apply. `code/download_market_universe_prices.py`, the market configuration, ticker/universe metadata in the run archive, and derived real-market results are included so an authorized user can reconstruct the market inputs.
 
-1. Commit this folder as the public repository root.
-2. Keep large outputs out of git.
-3. Upload large artifacts separately and update `manifest/external_artifacts.csv`.
-4. Add a release tag that matches the paper submission version.
+## Citation and Release
+
+Use `CITATION.cff` when citing this package. Release `v1.0.0` is the package snapshot intended for the TEVC supplementary submission; a Zenodo DOI can be added to the citation and README after archival deposition.

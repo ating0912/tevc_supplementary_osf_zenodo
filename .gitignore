@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Environments
+.venv/
+venv/
+env/
+.conda/
+
+# Temporary or regenerated raw workspaces (the curated archives are tracked)
+raw/
+raw_outputs/
+restored_artifacts/
+*.pkl
+*.mat
+*.fig
+
+# Local/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
