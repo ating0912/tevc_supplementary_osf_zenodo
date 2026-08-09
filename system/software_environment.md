@@ -3,7 +3,6 @@
 ## Operating System and Hardware
 
 - OS: Microsoft Windows NT 10.0.26200.0 (Windows 11 generation), 64-bit
-- Packaging machine: `LAPTOP-NEKNF074`
 - CPU: Intel64 Family 6 Model 186 Stepping 2, GenuineIntel
 - Logical processors: 20
 - RAM: 15.65 GB
