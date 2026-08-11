@@ -1,0 +1,13 @@
+path,status,current_role,reason
+scripts/check_github_package.py,authoritative,package validator,Checks current formal artifacts authority boundaries metadata checksums and archives.
+scripts/check_paper_values.py,authoritative,paper-value validator,Checks the 20260811 formal values and endpoint scopes.
+scripts/check_no_personal_paths.py,authoritative,path validator,Rejects personal absolute paths in tracked text artifacts.
+scripts/update_artifact_checksums.py,authoritative,checksum generator,Builds the current 43-artifact checksum manifest.
+scripts/update_code_inventory.py,authoritative,code inventory generator,Inventories research code and package-maintenance scripts.
+scripts/write_revalidation_report.py,authoritative,report generator,Builds the current revalidation report.
+audit_all_artifacts.py,authoritative,audit-only orchestrator,Audits precomputed stages and does not launch research jobs.
+code/build_tevc_github_package.py,disabled_legacy,historical package builder,Embeds superseded pre-20260811 paths and conclusions; execution is intentionally blocked.
+code/build_tevc_reproducibility_package.py,disabled_legacy,historical package builder,Embeds superseded pre-20260811 source mappings; execution is intentionally blocked.
+code/build_tevc_protocol_completion_package.py,audit_only,historical protocol report producer,Reads legacy rank-derived configured statistics and is not used for formal inference.
+code/analyze_real_market_ecmade_no_replicate_audit.py,audit_only,historical no-replicate analysis,Retained for provenance and not used for the formal four-configuration endpoint tests.
+code/analyze_p1_mokp_rankscore_statistics_no_replicate_audit.py,audit_only,historical MOKP rank audit,Rank-derived MOKP quantities are descriptive only.

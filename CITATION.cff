@@ -1,14 +1,13 @@
 cff-version: 1.2.0
 title: TEVC Supplementary Artifact Package (No-Replicate)
-message: Cite this versioned software release and the associated TEVC paper. A Zenodo DOI has not yet been assigned.
+message: This is pre-release metadata. Cite the final versioned software release and associated TEVC paper after a Zenodo DOI is assigned.
 type: software
 authors:
   - family-names: Chen
     given-names: Yi-Ting
 repository-code: https://github.com/ating0912/tevc_supplementary_osf_zenodo
 url: https://github.com/ating0912/tevc_supplementary_osf_zenodo
-version: 1.0.0
-date-released: 2026-08-07
+version: 0.9.0-pre-release
 license: MIT
 keywords:
   - reproducibility

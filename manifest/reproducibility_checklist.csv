@@ -9,9 +9,11 @@ no_replicate_features,No-replicate meta-features and feature columns,complete,se
 labels,Train/validation ranking labels and run metrics,complete,Formal and retained legacy label tables are included in labels/.
 frozen_selector,Frozen no-replicate selector,complete,selector/selector_no_replicate.joblib is stored with Git LFS.
 test_predictions,Test per-theta predictions and selected theta,complete,selector/test_theta_predictions.csv and selector/test_selected_theta.csv
-run_level_metrics,Experiment A/B/C and real-market run-level metrics,complete,Run-level CSV files are included under experiments/ labels/ and real_market/.
-statistical_tests,Statistical-test inputs and outputs,complete,Friedman and Wilcoxon-Holm outputs are included beside experiment summaries.
-real_market,33 real-market windows and configured results,complete_with_data_rights_note,Derived results and download code are included; raw provider prices are excluded under DATA_USE_STATEMENT.md.
-paper_outputs,Paper tables figures and reconstruction code,complete,Paper tables figures archives and plotting code are included.
+run_level_metrics,Experiment A/B/C selector ablation MOKP and real-market run-level metrics,complete,Run-level CSV files are included under experiments/ labels/ and real_market/.
+selector_final_test_ablation,Four variants over 32 groups and 960 runs per variant,complete,Summary assignments completeness run metrics Friedman and Wilcoxon-Holm files are in experiments/selector_ablation/.
+statistical_tests,Statistical-test inputs and outputs with authority boundaries,complete,Friedman and Wilcoxon-Holm outputs are included; manifest/artifact_authority.csv excludes rank-derived inference from formal evidence.
+real_market,33 real-market windows in six-algorithm and four-configuration protocols,complete_with_data_rights_note,Formal endpoint tests and descriptive cost sensitivity are included; raw provider prices are excluded under DATA_USE_STATEMENT.md.
+mokp,MOKP formal non-rank endpoint inference,complete,HV IGD PF overlap PF drift Diversity and Runtime tests are in experiments/mokp/.
+paper_outputs,Paper tables figures and reconstruction code,complete,Scope-specific Experiment C selector-ablation six-algorithm four-configuration and MOKP tables are included.
 integrity,SHA-256 and ZIP validation,complete,manifest/artifact_checksums.sha256 and scripts/check_github_package.py
 readme_license,"README, citation, licenses, and data-use statement",complete,"README files, CITATION.cff, LICENSE, DATA_USE_STATEMENT.md, and LICENSES_THIRD_PARTY.md"

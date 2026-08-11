@@ -657,6 +657,10 @@ if __name__ == "__main__":
 
 
 def main() -> None:
+    raise SystemExit(
+        "DEPRECATED: this historical builder embeds superseded pre-20260811 tables. "
+        "Use the repository package in place and run scripts/check_github_package.py."
+    )
     if not FULL.exists():
         raise SystemExit("Build tevc_reproducibility_package first.")
     if OUT.exists():

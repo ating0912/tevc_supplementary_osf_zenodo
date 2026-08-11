@@ -2,90 +2,103 @@
 
 [English](README.md)
 
-本 repository 是 TEVC 投資組合最佳化研究的封存補充資料套件，提供實驗設定、研究程式、預先計算的 run-level 輸出、指標表、統計檢定、圖表、執行紀錄與原始 Pareto-front（PF）CSV，供第三方檢查論文結果。
+本 repository 是 TEVC 投資組合最佳化研究的 GitHub/OSF/Zenodo 預發行補充資料套件，保存實驗設定、完整研究程式、預先計算的 run-level 輸出、統計檢定、論文表格、圖、執行紀錄與原始 Pareto front（PF）CSV，供第三方核對研究證據。
 
-## 套件範圍與用途
+## 1. 專案用意與主要結論
 
-本 repository 支援 artifact 稽核與指定實驗重跑，**不是 fully automated end-to-end reproduction pipeline**。`audit_all_artifacts.py` 只會使用 `--audit-only` 逐階段呼叫套件驗證器；它不會啟動最佳化器、不會重新產生 labels、不會重新訓練 selector，也不會從零重建全部表格或論文。
+本研究評估 meta-designed 與 stability-aware ECMADE-MOO 設定流程在合成限制式投資組合、rolling real-market windows 與 MOKP transfer tests 上的表現。正式合成 selector 為 **no-replicate** 版本；`replicate` 只保留作為來源追蹤欄位，不作為 selector 輸入。
 
-預先計算的輸出是本套件的正式結果快照。完整重跑需要 MATLAB R2020b、指定 PlatEMO 版本、`code/` 中對應的 producer scripts，以及相當長的計算時間。部分歷史 runner 仍需要放在 repository-relative `external_data/` 下、保留原 worksheet 格式的 theta workbooks；供結果檢查使用的 frozen configuration 已包含於 `configs/theta_L24.csv`。各 artifact 的 repository-relative producer/provenance paths 記錄於 `manifest/source_file_map.csv`。
+以 `20260811` 正文及附錄正式表格為最高判定依據，結果顯示部分 omnibus endpoints 存在方法差異，但不能概括宣稱 stability-aware 方法在所有指標都較佳。Experiment C 的 StabilityWeightedRank 兩兩比較經 Holm 校正後皆不顯著。四設定 real-market protocol 中，其年化淨報酬顯著優於 MetaDesigned、年化波動顯著劣於 HandCrafted、runtime 較快，但多項 PF 品質指標較差。由 rank 推導的分數僅作描述性使用。
 
-## 專案目的
+## 2. 套件範圍與用途
 
-本研究評估 meta-designed、stability-aware 的 ECMADE-MOO 組態協定，是否能在合成限制型投資組合問題與真實市場 rolling windows 中改善穩定性及 Pareto-front 品質。正式 synthetic selector 採 **no-replicate** 設定：`replicate` 僅保留為 instance provenance，不作為 selector 輸入特徵。
+本 repository 支援 artifact inspection 與 targeted reruns，**不是 fully automated end-to-end reproduction pipeline**。`audit_all_artifacts.py` 以 `--audit-only` 呼叫各階段驗證器，不會啟動所有 optimizer、重新產生 labels、重訓 selector、重建全部表格或自動產生論文。現行與歷史 producer 的角色見 `manifest/code_authority.csv`。
 
-## 結果快照
+`code/` 包含可用於指定實驗的 MATLAB/Python runners。完整 optimizer 重跑需要 MATLAB R2020b、記錄的 PlatEMO 版本、合法取得的原始資料與大量運算時間。封存 CSV 是本套件的固定證據快照。producer/provenance 路徑見 `manifest/source_file_map.csv`；正式與 audit-only 檔案的界線見 `manifest/artifact_authority.csv`。
 
-下列數值皆連結至 `manifest/paper_value_crosscheck.csv` 所列的封存 CSV。正式投稿前，必須再與最終正文及附錄逐項同步。
+## 3. 資料切分與正式 Selector
 
-- **Synthetic split：**112 個 training、48 個 validation、32 個 held-out test instances。
-- **Experiment C synthetic comparison：**`ExperimentC_NoReplicate_ECMADE_MOO` 在 32 個 test instances 上共有 960 runs。其 mean stability-weighted rank 為 `2.375`，`MetaDesigned_ECMADE_MOO` 為 `2.4375`；兩者 Holm-adjusted pairwise p-value 為 `0.9091220347`，因此此 pairwise 差異不顯著。兩者的 mean rank-based composite rank 同為 `2.46875`，adjusted pairwise p-value 為 `1.0`。
-- **Selector ablation：**套件目前包含 ablation protocol 與 assignment manifest，但沒有最終 ablation 結果或統計表，因此 README 不提出量化的 ablation 結論。
-- **Real market：**封存表使用的方法 ID 為 `ExperimentC_StabilityAware_ECMADE_MOO`。在 33 個 universe-window units 上，RankScore Friedman test 為 `chi-square = 24.6965944272`、`p = 1.7868365549e-05`。Experiment C 的 mean RankScore 為 `2.5688705234`；最低的 mean RankScore 是 `HandCrafted_ECMADE_MOO` 的 `2.2052341598`。Experiment C 對 Bayesian、HandCrafted、MetaDesigned 的 RankScore Holm-adjusted p-values 依序為 `1.0`、`1.0`、`0.5125780637`。
-- **Transaction-cost sensitivity：**在 10、20、50 bps 下，Experiment C 的 mean annual net return 分別為 `0.3219427032`、`0.3207092913`、`0.3170134141`，三種情境的 annual-return rank 都是第三。這些是描述性敏感度結果，不是 adjusted significance 結論。
+- 合成資料切分：112 training、48 validation、32 held-out test instances。
+- 正式模型：`selector/selector_no_replicate.joblib`。
+- 特徵政策：`selector/feature_columns_no_replicate.json` 不含 `replicate` 輸入。
+- 正式 test predictions 與 theta assignments 位於 `selector/`。
 
-## 套件內容
+## 4. Experiment A
+
+Experiment A 的 run-level metrics、instance-method summaries 與 statistical tests 位於 `experiments/experiment_a/`；論文表位於 `paper_outputs/table_experiment_a.csv`。這些是正式 artifact inventory 的一部分，不以 RankScore-only 推論取代。
+
+## 5. Experiments B 與 C
+
+修正後五方法 Experiment C 使用 32 個 test groups，每個方法 960 runs。MetaDesigned 的平均 J-stability 為 `0.6963`、平均 StabilityWeightedRank 為 `2.1875`；stability-aware ECMADE-MOO 的平均 J-stability 為 `0.6211`、平均 StabilityWeightedRank 為 `2.7813`、平均 Diversity 為 `0.8299`。
+
+J-stability/StabilityWeightedRank 的 Friedman 結果為 `chi-square = 18.8000`、`p = 0.000860`。stability-aware ECMADE-MOO 對 HandCrafted、RandomConfig、BayesianConfig、MetaDesigned 的 Holm-adjusted p-value 分別為 `0.8086`、`0.1205`、`1.0000`、`0.2750`，皆未達 0.05 顯著水準。正式表位於 `experiments/experiment_bc/`。
+
+## 6. Selector Final-Test Ablation
+
+四個 variants 為 FullSelector、NoInstanceFeatures、NoThetaFeatures、RandomizedLabels；每個 variant 使用 32 groups、960 runs。其 mean RankScore 分別為 `2.6042`、`2.8125`、`2.3854`、`2.1979`。NoThetaFeatures 的 overall RankScore 為 `2.1667`，FullSelector 為 `3.0000`。
+
+RankScore Friedman 結果為 `chi-square = 19.3956`、`p = 0.000226`。FullSelector 對 NoInstanceFeatures、NoThetaFeatures、RandomizedLabels 的 Holm-adjusted p-value 分別為 `0.1918`、`1.0000`、`1.0000`，皆不顯著。assignments、run completeness、run metrics 與統計表位於 `experiments/selector_ablation/`。
+
+## 7. Validation Feature 與 Label Ablations
+
+Feature-group 與 label-objective validation ablation 程式收錄於 `code/`。其封存輸出屬支援性分析；第 6 節的 final-test selector ablation 才是 `20260811` cross-check 採用的正式 held-out selector 比較。
+
+## 8. Mechanism 與 Parameter Ablations
+
+機制與參數消融的產生程式及封存輸出位於 `code/`、`experiments/` 與 `artifacts/`。歷史 RankScore 推論只保留在 `artifacts/deprecated_or_audit_only/`，不作為正式論文證據。
+
+## 9. 六演算法 Real-Market 比較
+
+六演算法研究含 33 個 rolling windows。10 bps 下，MOEAD mean annual net return 為 `34.81%`；GDE3 mean Sharpe 為 `1.286`、Sortino 為 `2.122`；ECMADE-MOO mean annual volatility 為 `26.11%`、CVaR95 loss 為 `3.38%`。NSGA-II 的 CrossWindowOverallRank `2.167` 僅為描述值。
+
+原始財務 endpoints 的 Friedman p-value 範圍為 `0.1112` 至 `0.8115`，皆未達 0.05。`RankScore`、`WindowRank` 與 `CrossWindowOverallRank` 不作推論。正式 endpoint tests 位於 `real_market/six_algorithm_endpoint_*.csv`。
+
+## 10. 四設定 Real-Market Protocol
+
+在 33 個 paired windows 中，stability-aware ECMADE-MOO 的年化淨報酬顯著高於 MetaDesigned（`26/0/7`，Holm `p = 0.034893`），年化波動顯著劣於 HandCrafted（`12/0/21`，Holm `p = 0.022167`）。Sharpe、Sortino、maximum drawdown、CVaR95、turnover 與其他原始財務比較經 Holm 校正後皆不顯著。
+
+stability-aware 方法比三個 baselines 快；正式 endpoint 表亦記錄其 PF size、HV、IGD 與 PF overlap 的劣勢。16 個 endpoints 與 multiplicity scope 詳見 `real_market/configuration_protocol_endpoint_pairwise_wilcoxon_holm.csv`。
+
+## 11. Transaction-Cost Sensitivity
+
+成本敏感度分析是在固定 portfolio paths 上重新計價，不會重跑 optimizer，也不是 cost-aware reoptimization。交易成本由 10 提高至 50 bps，mean annual net return 約下降 0.48 至 0.49 個百分點：MOEAD `0.3481 -> 0.3432`、NSGA-II `0.3369 -> 0.3320`、ECMADE-MOO `0.3271 -> 0.3222`。所有 scenarios 的順序皆為 MOEAD、NSGA-II、GDE3、A-MPMO、ECMADE-MOO、SPEA2。此結果僅為描述性敏感度證據。
+
+## 12. MOKP Transfer Validation
+
+MOKP 正式推論只使用 HV、IGD、PF overlap、PF drift、Diversity 與 Runtime。MOKP rank-derived scores 僅為描述值。正式 Friedman 與 Wilcoxon-Holm 檔案位於 `experiments/mokp/`。
+
+## 13. 套件清單與稽核
 
 | 要求 | 位置 |
 | --- | --- |
-| 研究程式 | `code/`、`manifest/code_inventory.csv` |
-| 中英文 README | `README.md`、`README.zh-TW.md` |
+| 完整研究程式 | `code/`、`manifest/code_inventory.csv` |
+| 中英文說明 | `README.md`、`README.zh-TW.md` |
 | Python 環境 | `environment.yml`、`requirements.txt` |
-| MATLAB、PlatEMO、CPU、GPU、OS | `system/software_environment.md` |
-| 實驗設定 | `configs/` |
-| 正式 split 與 selector artifacts | `data/synthetic/`、`selector/`、`labels/` |
-| Run-level tables | `labels/`、`experiments/`、`real_market/` |
+| MATLAB/PlatEMO/CPU/GPU/OS | `system/software_environment.md` |
+| 設定與 RNG policy | `configs/`、`manifest/rng_policy.md` |
+| Run-level 輸出與統計 | `labels/`、`experiments/`、`real_market/` |
 | Run logs | `logs/full_run_logs.zip` |
-| Tables 與統計檢定 | `paper_outputs/`、`experiments/`、`real_market/` |
-| Figures | `figures/`、`figures/paper_figures.zip` |
-| Raw PF/objective/archive CSV | `raw_pf/raw_pf_csv_part*.zip` |
-| 完整性雜湊 | `manifest/artifact_checksums.sha256` |
-| 論文數值核對表 | `manifest/paper_value_crosscheck.csv` |
+| Tables 與 figures | `paper_outputs/`、`figures/` |
+| Raw PF CSV archives | `raw_pf/raw_pf_csv_part*.zip` |
+| Provenance、authority 與 checksums | `manifest/` |
 
-ZIP archives 與 frozen selector 使用 Git LFS 儲存。Clone 前請先安裝 Git LFS：
+大型 archives 與 frozen selector 使用 Git LFS。clone 後執行：
 
 ```bash
 git lfs install
-git clone https://github.com/ating0912/tevc_supplementary_osf_zenodo.git
-cd tevc_supplementary_osf_zenodo
 git lfs pull
-```
-
-## 執行環境
-
-```bash
 conda env create -f environment.yml
 conda activate tevc-reproducibility
-```
-
-封存環境為 MATLAB 9.9.0.2037887（R2020b）Update 8。PlatEMO v2.9.0 是 R2020b baseline implementation；PlatEMO v4.3 用於 compatibility 與 reference-PF checks。完整軟硬體資訊請見 `system/software_environment.md`。
-
-## 稽核封存 Artifacts
-
-```bash
-python scripts/fetch_artifacts.py
 python scripts/check_github_package.py
-python scripts/check_github_package.py --full-zip-test
 python scripts/check_paper_values.py
 python scripts/check_no_personal_paths.py
 python audit_all_artifacts.py
 ```
 
-以上指令只驗證封存套件，不代表 end-to-end experimental rerun。驗證器會檢查必要檔案、artifact 大小、SHA-256、ZIP 可讀性、112/48/32 split、no-replicate feature policy 與主要 CSV 形狀；`--full-zip-test` 會額外執行完整 archive CRC 檢查。
+以上命令只稽核封存快照，不是 end-to-end experimental rerun。`--full-zip-test` 會額外執行所有 ZIP members 的 CRC 檢查。
 
-## 可重現性追溯
+## 資料使用與發行狀態
 
-1. 實驗設定在 `configs/`，RNG policy 在 `manifest/rng_policy.md`。
-2. 正式資料分割在 `data/synthetic/split_manifest.csv`。
-3. Producer scripts 在 `code/`，repository-relative provenance 在 `manifest/source_file_map.csv`。
-4. 預先計算的 metrics 在 `labels/`、`experiments/`、`real_market/`，logs 在 `logs/`。
-5. Friedman 與 Wilcoxon-Holm 等統計表放在各實驗輸出旁。
-6. 論文表格、figures 與 raw PF 分別在 `paper_outputs/`、`figures/`、`raw_pf/`。
+合成 instances、derived metrics 與 raw optimization fronts 可供研究核對。若 market price provider 條款限制再散布，原始價格不納入套件；詳見 `DATA_USE_STATEMENT.md`。
 
-## 資料使用
-
-Synthetic instances、derived metrics 與 raw optimization fronts 可供研究驗證。Raw market prices 因資料供應條款可能受限，未直接重新散布；套件包含市場下載程式、設定、run archive 中的 ticker/universe metadata 與 derived results，讓有資料使用權限者重建輸入。
-
-## 引用與封存發布
-
-本 repository 尚未取得 Zenodo DOI。DOI 正式產生前，請引用 `CITATION.cff` 所記錄的 GitHub 版本或 tag，不要使用假的 placeholder DOI。正式投稿時，應建立 GitHub `v1.0.0` release、由 Zenodo 封存該 release，再把取得的 DOI 同步更新到 `README.md`、`README.zh-TW.md`、`CITATION.cff` 與論文。詳細步驟見 `docs/zenodo_release_checklist.md`。
+目前 metadata 為 `0.9.0-pre-release`，尚未建立 Zenodo DOI 或最終 `v1.0.0` archive。待正文、CSV cross-check 與 Git LFS release archive 凍結後，再建立 GitHub release 並透過 Zenodo 封存，最後同步更新兩份 README、`CITATION.cff`、`.zenodo.json` 與論文 DOI。

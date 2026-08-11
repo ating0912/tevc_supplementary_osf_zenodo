@@ -1,0 +1,13 @@
+item,value
+real_market_source,p0_lite_outputs\p1_rolling_window_market_validation_20260719\configured_ecmade_comparison_summary_official_20260808\configured_window_method_ranked.csv
+real_market_paired_unit,33 universe-windows
+real_market_primary,ExperimentC_StabilityAware_ECMADE_MOO
+real_market_baselines,BayesianConfig_ECMADE_MOO;HandCrafted_ECMADE_MOO;MetaDesigned_ECMADE_MOO
+real_market_secondary_holm_scope,within each endpoint across three primary comparisons
+elite_source,p0_lite_outputs\tevc_pdf_direct_ablation_full_20260717\pdf_direct_ablation_summary\pdf_direct_ablation_instance_ranked.csv
+elite_paired_unit,32 hold-out Test instance-K groups
+elite_reference,PDF_Abl_Elite_0pct
+elite_holm_scope,within each endpoint across 0% vs 1%/5%/10% comparisons
+wilcoxon_alternative,two-sided
+zero_method,wilcox
+correction_method,Holm

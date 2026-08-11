@@ -1,0 +1,8 @@
+item,value,notes
+authority,20260811 formal tables,Formal manuscript and appendix tables supersede stale prose and the original planned-run protocol.
+paired_unit,split-instance-K,There are 32 held-out paired groups.
+runs_per_variant,960,Each of four variants has 32 groups times 30 optimizer runs.
+omnibus_test,Friedman,The primary reported RankScore omnibus test uses all four variants.
+post_hoc_test,Wilcoxon plus Holm,FullSelector is compared with each of the three ablated variants.
+interpretation,No FullSelector pairwise superiority claim,All three RankScore comparisons are nonsignificant after Holm correction.
+source_protocol_warning,protocol_source_20260728.json records an obsolete plan,Its 10-run and 1280-run fields are retained only for provenance and are not the completed design.

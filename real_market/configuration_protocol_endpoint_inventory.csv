@@ -1,0 +1,17 @@
+metric,included,direction,paired_units
+annual_net_return_mean,True,higher is better,33
+annual_volatility_mean,True,lower is better,33
+sharpe_mean,True,higher is better,33
+sortino_mean,True,higher is better,33
+max_drawdown_mean,True,higher is better,33
+cvar95_loss_mean,True,lower is better,33
+rebalance_turnover_mean,True,lower is better,33
+selected_holdings_mean,True,lower is better,33
+average_pf_holdings_mean,True,lower is better,33
+PF_Size_mean,True,higher is better,33
+HV_mean,True,higher is better,33
+IGD_mean,True,lower is better,33
+PF_Overlap_mean,True,higher is better,33
+PF_Drift_mean,True,lower is better,33
+Diversity_mean,True,higher is better,33
+Runtime_mean,True,lower is better,33

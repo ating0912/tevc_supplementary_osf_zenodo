@@ -1,0 +1,8 @@
+﻿metric,direction,paired_unit,n_paired_units,friedman_chi_square,p_value,alpha,significant
+RankScore,min,split-instance-K,32,19.395569620253152,0.00022644791718851452,0.05,True
+HV_mean,max,split-instance-K,32,12.849829351535837,0.004972873035899263,0.05,True
+IGD_mean,min,split-instance-K,32,13.402730375426584,0.0038418893218907066,0.05,True
+PF_Overlap_mean,max,split-instance-K,32,22.2206896551724,5.8684920733218105e-05,0.05,True
+PF_Drift_mean,min,split-instance-K,32,25.976109215017015,9.64788992641325e-06,0.05,True
+Diversity_mean,max,split-instance-K,32,28.41296928327645,2.9747457074642414e-06,0.05,True
+Runtime_mean,min,split-instance-K,32,67.94999999999993,1.1725616680526605e-14,0.05,True

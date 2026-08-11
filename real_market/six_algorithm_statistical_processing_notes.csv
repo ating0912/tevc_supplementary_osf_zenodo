@@ -1,0 +1,15 @@
+item,value
+label_objective_paired_unit,Validation instance-K group
+label_objective_paired_n,48
+label_objective_primary,official_C_label_target
+feature_group_paired_unit,Validation instance-K group
+feature_group_paired_n,48
+feature_group_primary,FullSelector_official_seed
+real_market_paired_unit,rolling window
+real_market_paired_n,33
+real_market_primary,ECMADE_MOO
+wilcoxon_alternative,two-sided
+wilcoxon_zero_method,wilcox
+mcnemar_test,exact binomial sign test on discordant pairs
+correction_method,Holm
+alpha,0.05

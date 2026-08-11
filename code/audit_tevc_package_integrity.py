@@ -60,7 +60,10 @@ def main() -> None:
         "selector/test_selected_theta.csv",
         "paper_outputs/table_experiment_a.csv",
         "paper_outputs/table_experiment_c.csv",
-        "paper_outputs/table_real_market.csv",
+        "paper_outputs/table_selector_final_test_ablation.csv",
+        "paper_outputs/table_real_market_six_algorithm.csv",
+        "paper_outputs/table_real_market_configuration_protocols.csv",
+        "paper_outputs/table_mokp.csv",
     ]
     csv_lines = []
     for rel in key_csvs:
@@ -78,7 +81,9 @@ def main() -> None:
         contains_replicate = str("replicate" in json.dumps(features))
 
     archive_lines = []
-    for rel in ["logs/full_run_logs.zip", "figures/paper_figures.zip", "raw_pf/raw_pf_csv.zip"]:
+    archives = ["logs/full_run_logs.zip", "figures/paper_figures.zip"]
+    archives.extend(f"raw_pf/raw_pf_csv_part{part:02d}.zip" for part in range(1, 7))
+    for rel in archives:
         path = root / rel
         if path.exists():
             archive_lines.append(f"- `{rel}`: present, {path.stat().st_size / (1024 * 1024):.2f} MB")

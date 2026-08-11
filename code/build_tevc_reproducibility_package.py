@@ -758,6 +758,10 @@ def write_schema_files() -> None:
 
 
 def main() -> None:
+    raise SystemExit(
+        "DEPRECATED: this historical builder maps superseded pre-20260811 artifacts. "
+        "Use manifest/source_file_map.csv and the current repository validators."
+    )
     copied: list[dict[str, str]] = []
     write_docs()
     write_schema_files()

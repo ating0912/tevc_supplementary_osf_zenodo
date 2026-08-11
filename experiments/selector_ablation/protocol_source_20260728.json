@@ -1,0 +1,35 @@
+{
+  "purpose": "formal selector-level final-test ablation for Experiment C",
+  "variants": {
+    "FullSelector": {
+      "method": "SelectorAblation_FullSelector_ECMADE_MOO",
+      "drop_instance": false,
+      "drop_theta": false,
+      "shuffle_labels": false
+    },
+    "NoInstanceFeatures": {
+      "method": "SelectorAblation_NoInstanceFeatures_ECMADE_MOO",
+      "drop_instance": true,
+      "drop_theta": false,
+      "shuffle_labels": false
+    },
+    "NoThetaFeatures": {
+      "method": "SelectorAblation_NoThetaFeatures_ECMADE_MOO",
+      "drop_instance": false,
+      "drop_theta": true,
+      "shuffle_labels": false
+    },
+    "RandomizedLabels": {
+      "method": "SelectorAblation_RandomizedLabels_ECMADE_MOO",
+      "drop_instance": false,
+      "drop_theta": false,
+      "shuffle_labels": true
+    }
+  },
+  "runs_per_instance_planned": 10,
+  "N": 100,
+  "maxFE": 10000,
+  "test_instances": 32,
+  "expected_optimizer_runs": 1280,
+  "target": "C_LabelScore"
+}

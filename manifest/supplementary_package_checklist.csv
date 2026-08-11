@@ -5,6 +5,6 @@ environment.yml,complete,environment.yml and requirements.txt,Python versions an
 MATLAB/PlatEMO version,complete,system/software_environment.md,MATLAB R2020b Update 8 plus PlatEMO v2.9.0 and v4.3 roles are recorded.
 CPU/GPU/OS,complete,system/software_environment.md,"OS, CPU, RAM, and GPU adapters are recorded."
 run logs,complete,logs/full_run_logs.zip,Actual run logs are included through Git LFS.
-tables,complete,labels/ experiments/ real_market/ and paper_outputs/,Run-level metrics summary tables and statistical-test tables are included.
+tables,complete,labels/ experiments/ real_market/ and paper_outputs/,Corrected Experiment C selector ablation six-algorithm real-market four-configuration and MOKP tables are included with formal endpoint tests.
 figures,complete,figures/ and figures/paper_figures.zip,Individual paper figures and the complete figure archive are included.
-raw PF csv,complete,raw_pf/raw_pf_csv_part*.zip,Raw Pareto-front objective archive and population CSV files are included as validated multipart ZIP archives through Git LFS.
+raw PF csv,complete,raw_pf/raw_pf_csv_part*.zip,Raw Pareto-front objective archive and population CSV files are included as validated multipart ZIP archives through Git LFS; rank-derived inference is separately marked audit-only.

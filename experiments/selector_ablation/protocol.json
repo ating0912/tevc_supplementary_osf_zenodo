@@ -1,0 +1,18 @@
+{
+  "authority": "20260811 manuscript and appendix formal tables",
+  "purpose": "formal selector-level held-out final-test ablation for Experiment C",
+  "variants": [
+    "FullSelector",
+    "NoInstanceFeatures",
+    "NoThetaFeatures",
+    "RandomizedLabels"
+  ],
+  "test_groups": 32,
+  "runs_per_group": 30,
+  "runs_per_variant": 960,
+  "expected_optimizer_runs": 3840,
+  "population_size": 100,
+  "max_function_evaluations": 10000,
+  "primary_reported_score": "RankScore",
+  "inference": "Friedman omnibus followed by FullSelector-vs-baseline Wilcoxon tests with Holm correction"
+}

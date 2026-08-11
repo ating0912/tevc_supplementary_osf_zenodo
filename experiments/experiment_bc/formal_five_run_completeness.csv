@@ -1,0 +1,6 @@
+﻿method,paired_units,min_runs,max_runs,total_runs
+BayesianConfig_ECMADE_MOO,32,30,30,960
+ExperimentC_StabilityAware_ECMADE_MOO,32,30,30,960
+HandCrafted_ECMADE_MOO,32,30,30,960
+MetaDesigned_ECMADE_MOO,32,30,30,960
+RandomConfig_ECMADE_MOO,32,30,30,960

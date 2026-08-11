@@ -1,0 +1,13 @@
+analysis,metric,paired_unit,instances,methods,method_list,friedman_chi_square,degrees_of_freedom,raw_p_value,significant_0_05,metric_direction
+real_market_six_algorithm,annual_net_return_mean,paired_window,33,6,A_MPMO;ECMADE_MOO;GDE3;MOEAD;NSGAII;SPEA2,6.264069264069235,5,0.28136521599347114,False,higher is better
+real_market_six_algorithm,sharpe_mean,paired_window,33,6,A_MPMO;ECMADE_MOO;GDE3;MOEAD;NSGAII;SPEA2,3.4415584415584135,5,0.6322484400986323,False,higher is better
+real_market_six_algorithm,sortino_mean,paired_window,33,6,A_MPMO;ECMADE_MOO;GDE3;MOEAD;NSGAII;SPEA2,6.696969696969745,5,0.2441699339202515,False,higher is better
+real_market_six_algorithm,max_drawdown_mean,paired_window,33,6,A_MPMO;ECMADE_MOO;GDE3;MOEAD;NSGAII;SPEA2,2.264069264069235,5,0.8115294000105766,False,higher is better
+real_market_six_algorithm,annual_volatility_mean,paired_window,33,6,A_MPMO;ECMADE_MOO;GDE3;MOEAD;NSGAII;SPEA2,8.948051948051898,5,0.11115421711692502,False,lower is better
+real_market_six_algorithm,rebalance_turnover_mean,paired_window,33,6,A_MPMO;ECMADE_MOO;GDE3;MOEAD;NSGAII;SPEA2,4.419047619047638,5,0.4907870932689101,False,lower is better
+real_market_six_algorithm,runtime_sec_mean,paired_window,33,6,A_MPMO;ECMADE_MOO;GDE3;MOEAD;NSGAII;SPEA2,148.82683982683977,5,2.3726168913088088e-30,True,lower is better
+real_market_six_algorithm,net_return_mean,paired_window,33,6,A_MPMO;ECMADE_MOO;GDE3;MOEAD;NSGAII;SPEA2,6.160173160173144,5,0.2909439571146768,False,higher is better
+real_market_six_algorithm,gross_return_mean,paired_window,33,6,A_MPMO;ECMADE_MOO;GDE3;MOEAD;NSGAII;SPEA2,6.160173160173144,5,0.2909439571146768,False,higher is better
+real_market_six_algorithm,annual_return_mean,paired_window,33,6,A_MPMO;ECMADE_MOO;GDE3;MOEAD;NSGAII;SPEA2,6.264069264069235,5,0.28136521599347114,False,higher is better
+real_market_six_algorithm,RankScore,paired_window,33,6,A_MPMO;ECMADE_MOO;GDE3;MOEAD;NSGAII;SPEA2,19.40864960282434,5,0.001612681651016917,True,lower is better
+real_market_six_algorithm,WindowRank,paired_window,33,6,A_MPMO;ECMADE_MOO;GDE3;MOEAD;NSGAII;SPEA2,19.40864960282434,5,0.001612681651016917,True,lower is better

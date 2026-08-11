@@ -1,21 +1,15 @@
 package_path,size_bytes,included_in_github,sample_path,restore_to,external_url,notes
 selector/selector_no_replicate.joblib,60463034,yes,,selector/selector_no_replicate.joblib,repository-relative,Included with Git LFS.
-labels/train_raw_run_metrics.csv,11506597,yes,samples/labels/train_raw_run_metrics.csv.sample.csv,labels/train_raw_run_metrics.csv,repository-relative,Included as a full run-level table.
-labels/validation_raw_run_metrics.csv,4815190,yes,samples/labels/validation_raw_run_metrics.csv.sample.csv,labels/validation_raw_run_metrics.csv,repository-relative,Included as a full run-level table.
-labels/train_theta_summary.csv,443839,yes,samples/labels/train_theta_summary.csv.sample.csv,labels/train_theta_summary.csv,repository-relative,Included.
-labels/validation_theta_summary.csv,184793,yes,samples/labels/validation_theta_summary.csv.sample.csv,labels/validation_theta_summary.csv,repository-relative,Included.
-labels/train_theta_ranking_labels.csv,807741,yes,samples/labels/train_theta_ranking_labels.csv.sample.csv,labels/train_theta_ranking_labels.csv,repository-relative,Included.
-labels/validation_theta_ranking_labels.csv,331390,yes,samples/labels/validation_theta_ranking_labels.csv.sample.csv,labels/validation_theta_ranking_labels.csv,repository-relative,Included.
-experiments/experiment_a/experiment_A_run_metrics.csv,21076118,yes,samples/experiments/experiment_a/experiment_A_run_metrics.csv.sample.csv,experiments/experiment_a/experiment_A_run_metrics.csv,repository-relative,Included as a full run-level table.
-experiments/experiment_a/experiment_A_instance_method_summary.csv,423851,yes,samples/experiments/experiment_a/experiment_A_instance_method_summary.csv.sample.csv,experiments/experiment_a/experiment_A_instance_method_summary.csv,repository-relative,Included.
-experiments/experiment_bc/formal_five_run_metrics.csv,2498370,yes,samples/experiments/experiment_bc/formal_five_run_metrics.csv.sample.csv,experiments/experiment_bc/formal_five_run_metrics.csv,repository-relative,Included as a full run-level table.
-experiments/experiment_bc/formal_five_instance_method_metrics_raw.csv,59513,yes,samples/experiments/experiment_bc/formal_five_instance_method_metrics_raw.csv.sample.csv,experiments/experiment_bc/formal_five_instance_method_metrics_raw.csv,repository-relative,Included.
-experiments/experiment_bc/formal_five_instance_method_endpoints_ranked.csv,92121,yes,samples/experiments/experiment_bc/formal_five_instance_method_endpoints_ranked.csv.sample.csv,experiments/experiment_bc/formal_five_instance_method_endpoints_ranked.csv,repository-relative,Included.
-experiments/experiment_bc/formal_five_pairwise_wilcoxon_holm.csv,39012,yes,samples/experiments/experiment_bc/formal_five_pairwise_wilcoxon_holm.csv.sample.csv,experiments/experiment_bc/formal_five_pairwise_wilcoxon_holm.csv,repository-relative,Included.
-real_market/configured_run_metrics_with_pf_stability.csv,756005,yes,samples/real_market/configured_run_metrics_with_pf_stability.csv.sample.csv,real_market/configured_run_metrics_with_pf_stability.csv,repository-relative,Included as a full run-level table.
-real_market/configured_window_method_summary.csv,85430,yes,samples/real_market/configured_window_method_summary.csv.sample.csv,real_market/configured_window_method_summary.csv,repository-relative,Included.
-real_market/configured_window_method_ranked.csv,94266,yes,samples/real_market/configured_window_method_ranked.csv.sample.csv,real_market/configured_window_method_ranked.csv,repository-relative,Included.
-real_market/configured_transaction_cost_overall.csv,2403,yes,samples/real_market/configured_transaction_cost_overall.csv.sample.csv,real_market/configured_transaction_cost_overall.csv,repository-relative,Included.
-logs/full_run_logs.zip,15931959,yes,,logs/full_run_logs.zip,repository-relative,Included with Git LFS.
-figures/paper_figures.zip,12654276,yes,,figures/paper_figures.zip,repository-relative,Included with Git LFS.
-raw_pf/raw_pf_csv_part*.zip,,yes,,raw_pf/raw_pf_csv_part*.zip,repository-relative,Included as validated multipart ZIP archives with Git LFS; see manifest/raw_pf_archive_parts.csv.
+labels/train_raw_run_metrics.csv,11506597,yes,samples/labels/train_raw_run_metrics.csv.sample.csv,labels/train_raw_run_metrics.csv,repository-relative,Full training run-level table.
+labels/validation_raw_run_metrics.csv,4815190,yes,samples/labels/validation_raw_run_metrics.csv.sample.csv,labels/validation_raw_run_metrics.csv,repository-relative,Full validation run-level table.
+experiments/experiment_a/experiment_A_run_metrics.csv,21076118,yes,samples/experiments/experiment_a/experiment_A_run_metrics.csv.sample.csv,experiments/experiment_a/experiment_A_run_metrics.csv,repository-relative,Full Experiment A run-level table.
+experiments/experiment_bc/formal_five_run_metrics.csv,2402274,yes,samples/experiments/experiment_bc/formal_five_run_metrics.csv.sample.csv,experiments/experiment_bc/formal_five_run_metrics.csv,repository-relative,Corrected Experiment C run-level table with sanitized paths.
+experiments/selector_ablation/run_metrics.csv,1839690,yes,,experiments/selector_ablation/run_metrics.csv,repository-relative,Full four-variant selector ablation run-level table.
+experiments/mokp/run_metrics.csv,2280205,yes,,experiments/mokp/run_metrics.csv,repository-relative,Full MOKP run-level table.
+real_market/six_algorithm_run_metrics.csv,533876,yes,,real_market/six_algorithm_run_metrics.csv,repository-relative,Full six-algorithm rolling-window run table.
+real_market/six_algorithm_transaction_cost_run_sensitivity.csv,2028694,yes,,real_market/six_algorithm_transaction_cost_run_sensitivity.csv,repository-relative,Fixed-path transaction-cost run sensitivity.
+real_market/configured_run_metrics_with_pf_stability.csv,771935,yes,samples/real_market/configured_run_metrics_with_pf_stability.csv.sample.csv,real_market/configured_run_metrics_with_pf_stability.csv,repository-relative,Official four-configuration run table with sanitized paths.
+real_market/configuration_protocol_endpoint_pairwise_wilcoxon_holm.csv,22136,yes,,real_market/configuration_protocol_endpoint_pairwise_wilcoxon_holm.csv,repository-relative,Formal 16-endpoint pairwise tests.
+logs/full_run_logs.zip,15931959,yes,,logs/full_run_logs.zip,repository-relative,Actual run logs included with Git LFS.
+figures/paper_figures.zip,12654276,yes,,figures/paper_figures.zip,repository-relative,Paper and supplementary figures included with Git LFS.
+raw_pf/raw_pf_csv_part*.zip,,yes,,raw_pf/raw_pf_csv_part*.zip,repository-relative,Validated multipart raw PF CSV archives included with Git LFS.

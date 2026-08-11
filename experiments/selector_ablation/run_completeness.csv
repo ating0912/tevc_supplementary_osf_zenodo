@@ -1,0 +1,5 @@
+﻿method,instances,runs
+SelectorAblation_FullSelector_ECMADE_MOO,32,960
+SelectorAblation_NoInstanceFeatures_ECMADE_MOO,32,960
+SelectorAblation_NoThetaFeatures_ECMADE_MOO,32,960
+SelectorAblation_RandomizedLabels_ECMADE_MOO,32,960

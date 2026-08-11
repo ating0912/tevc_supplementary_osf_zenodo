@@ -26,10 +26,10 @@
       "shuffle_labels": true
     }
   },
-  "runs_per_instance_planned": 10,
+  "runs_per_instance_planned": 30,
   "N": 100,
   "maxFE": 10000,
   "test_instances": 32,
-  "expected_optimizer_runs": 1280,
+  "expected_optimizer_runs": 3840,
   "target": "C_LabelScore"
 }
