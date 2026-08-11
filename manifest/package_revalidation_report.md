@@ -1,6 +1,6 @@
 # TEVC Reproducibility Package Revalidation Report
 
-- Generated: `2026-08-11T14:27:05+08:00`
+- Generated: `2026-08-11T16:10:43+08:00`
 - Validated numerical-content revision: `70799c6`
 - Report metadata corrections: included in the Git commit containing this report
 - Authority: `20260811` formal manuscript and appendix tables
@@ -17,7 +17,7 @@
 | Authority boundary | PASS | `6` historical files explicitly marked audit-only |
 | Run logs | PASS | `5738` archived members |
 | Raw PF CSV | PASS | `68832` files in `6` ZIP parts |
-| SHA-256 manifest | PASS after validator | `43` tracked artifacts |
+| SHA-256 manifest | PASS after validator | `48` tracked artifacts |
 
 ## 2. Changes in This Revalidation
 

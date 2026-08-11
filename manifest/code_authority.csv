@@ -2,9 +2,11 @@ path,status,current_role,reason
 scripts/check_github_package.py,authoritative,package validator,Checks current formal artifacts authority boundaries metadata checksums and archives.
 scripts/check_paper_values.py,authoritative,paper-value validator,Checks the 20260811 formal values and endpoint scopes.
 scripts/check_no_personal_paths.py,authoritative,path validator,Rejects personal absolute paths in tracked text artifacts.
-scripts/update_artifact_checksums.py,authoritative,checksum generator,Builds the current 43-artifact checksum manifest.
+scripts/update_artifact_checksums.py,authoritative,checksum generator,Builds the current 48-artifact checksum manifest.
 scripts/update_code_inventory.py,authoritative,code inventory generator,Inventories research code and package-maintenance scripts.
 scripts/write_revalidation_report.py,authoritative,report generator,Builds the current revalidation report.
+code/plot_grouped_feature_importance.py,authoritative,Fig. S2 and Fig. S3 renderer,Rebuilds formal grouped importance figures from packaged CSV inputs.
+code/compute_corrected_selector_shap_20260809.py,upstream_producer,Grouped importance data producer,Retained for provenance; full execution additionally requires the recorded corrected selector model and prediction tables.
 audit_all_artifacts.py,authoritative,audit-only orchestrator,Audits precomputed stages and does not launch research jobs.
 code/build_tevc_github_package.py,disabled_legacy,historical package builder,Embeds superseded pre-20260811 paths and conclusions; execution is intentionally blocked.
 code/build_tevc_reproducibility_package.py,disabled_legacy,historical package builder,Embeds superseded pre-20260811 source mappings; execution is intentionally blocked.

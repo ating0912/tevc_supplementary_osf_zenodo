@@ -31,6 +31,11 @@ REQUIRED = [
     "selector/feature_columns_no_replicate.json",
     "selector/test_theta_predictions.csv",
     "selector/test_selected_theta.csv",
+    "selector/figure_data/corrected_grouped_permutation_importance.csv",
+    "selector/figure_data/corrected_grouped_impurity_importance.csv",
+    "selector/figure_data/corrected_grouped_shap_importance.csv",
+    "code/plot_grouped_feature_importance.py",
+    "code/compute_corrected_selector_shap_20260809.py",
     "experiments/experiment_a/experiment_A_run_metrics.csv",
     "experiments/experiment_a/experiment_A_instance_method_summary.csv",
     "experiments/experiment_a/experiment_A_statistical_tests.csv",
@@ -87,6 +92,9 @@ EXPECTED_CSV_ROWS = {
     "configs/theta_L24.csv": 24,
     "selector/test_theta_predictions.csv": 768,
     "selector/test_selected_theta.csv": 32,
+    "selector/figure_data/corrected_grouped_permutation_importance.csv": 13,
+    "selector/figure_data/corrected_grouped_impurity_importance.csv": 13,
+    "selector/figure_data/corrected_grouped_shap_importance.csv": 13,
     "paper_outputs/table_experiment_a.csv": 1272,
     "paper_outputs/table_experiment_c.csv": 5,
     "paper_outputs/table_selector_final_test_ablation.csv": 4,
@@ -237,13 +245,24 @@ def check_release_metadata() -> None:
 
     figure_map = read_csv(ROOT / "manifest/table_figure_map.csv")
     expected_figures = {
-        "Fig. S2": "figures/fig_feature_importance_no_replicate.png",
-        "Fig. S3": "figures/fig_shap_global_importance_grouped.png",
+        "Fig. S2": (
+            "figures/fig_feature_importance_no_replicate.png",
+            "selector/figure_data/corrected_grouped_permutation_importance.csv;selector/figure_data/corrected_grouped_impurity_importance.csv",
+        ),
+        "Fig. S3": (
+            "figures/fig_shap_global_importance_grouped.png",
+            "selector/figure_data/corrected_grouped_shap_importance.csv",
+        ),
     }
-    mapped = {row["paper_artifact"]: row["package_output"] for row in figure_map}
-    for label, path in expected_figures.items():
-        if mapped.get(label) != path:
+    mapped = {row["paper_artifact"]: row for row in figure_map}
+    for label, (path, inputs) in expected_figures.items():
+        row = mapped.get(label, {})
+        if row.get("package_output") != path:
             fail(f"{label} is not explicitly mapped to {path}")
+        if row.get("inputs") != inputs:
+            fail(f"{label} does not identify its formal grouped CSV inputs")
+        if row.get("script") != "code/plot_grouped_feature_importance.py":
+            fail(f"{label} does not identify its executable renderer")
 
     report = (ROOT / "manifest/package_revalidation_report.md").read_text(encoding="utf-8")
     if "Validated numerical-content revision: `70799c6`" not in report:

@@ -89,13 +89,14 @@ git lfs install
 git lfs pull
 conda env create -f environment.yml
 conda activate tevc-reproducibility
+python code/plot_grouped_feature_importance.py --output-dir figures
 python scripts/check_github_package.py
 python scripts/check_paper_values.py
 python scripts/check_no_personal_paths.py
 python audit_all_artifacts.py
 ```
 
-These commands audit the archived snapshot; they are not an end-to-end experimental rerun. `--full-zip-test` additionally CRC-tests every ZIP member.
+The plotting command rebuilds formal Fig. S2 and Fig. S3 from the three packaged CSV files in `selector/figure_data/`. The remaining commands audit the archived snapshot; they are not an end-to-end experimental rerun. `--full-zip-test` additionally CRC-tests every ZIP member.
 
 ## Data Use and Release Status
 

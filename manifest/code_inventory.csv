@@ -101,6 +101,7 @@ code/check_real_market_configured_ecmade_status.py,code/check_real_market_config
 code/compare_ecmade_first10_stability.py,code/compare_ecmade_first10_stability.py,10428
 code/compare_ecmade_moo_tuning_subset.py,code/compare_ecmade_moo_tuning_subset.py,7892
 code/compare_problem_definitions.m,code/compare_problem_definitions.m,1335
+code/compute_corrected_selector_shap_20260809.py,code/compute_corrected_selector_shap_20260809.py,8029
 code/compute_tevc_adaptive_exchange_significance.py,code/compute_tevc_adaptive_exchange_significance.py,6364
 code/compute_tevc_eaf_width_for_report.py,code/compute_tevc_eaf_width_for_report.py,7894
 code/compute_tevc_subpopulation_significance.py,code/compute_tevc_subpopulation_significance.py,6332
@@ -208,6 +209,7 @@ code/pdist2.m,code/pdist2.m,796
 code/plot_fig4_pf_overlay.py,code/plot_fig4_pf_overlay.py,2744
 code/plot_fig5_igd.py,code/plot_fig5_igd.py,2047
 code/plot_fig5_pf_overlay.py,code/plot_fig5_pf_overlay.py,2723
+code/plot_grouped_feature_importance.py,code/plot_grouped_feature_importance.py,4770
 code/plot_no_replicate_shap_diagnostics.py,code/plot_no_replicate_shap_diagnostics.py,2843
 code/plot_p0_all_methods_pf_overlay.py,code/plot_p0_all_methods_pf_overlay.py,7143
 code/plot_p0_all_methods_runs_grid.py,code/plot_p0_all_methods_runs_grid.py,7259
@@ -363,7 +365,7 @@ code/train_experiment_c_stability_selector.py,code/train_experiment_c_stability_
 code/train_meta_designed_ecmade_moo.py,code/train_meta_designed_ecmade_moo.py,14349
 code/validate_cec2009_official_uf.m,code/validate_cec2009_official_uf.m,1566
 code/validate_v43_native_igd.m,code/validate_v43_native_igd.m,2184
-scripts/check_github_package.py,scripts/check_github_package.py,13973
+scripts/check_github_package.py,scripts/check_github_package.py,15073
 scripts/check_no_personal_paths.py,scripts/check_no_personal_paths.py,1400
 scripts/check_package.py,scripts/check_package.py,3447
 scripts/check_paper_values.py,scripts/check_paper_values.py,10456
@@ -372,6 +374,6 @@ scripts/generate_checksums.py,scripts/generate_checksums.py,208
 scripts/rebuild_raw_pf_archive.py,scripts/rebuild_raw_pf_archive.py,5480
 scripts/run_stage.py,scripts/run_stage.py,1695
 scripts/sanitize_run_paths.py,scripts/sanitize_run_paths.py,2231
-scripts/update_artifact_checksums.py,scripts/update_artifact_checksums.py,3177
+scripts/update_artifact_checksums.py,scripts/update_artifact_checksums.py,3489
 scripts/update_code_inventory.py,scripts/update_code_inventory.py,1126
 scripts/write_revalidation_report.py,scripts/write_revalidation_report.py,8680
