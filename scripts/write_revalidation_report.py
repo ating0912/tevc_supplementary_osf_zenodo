@@ -10,7 +10,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "manifest" / "package_revalidation_report.md"
-NUMERICAL_CONTENT_REVISION = "70799c6"
+CORE_MANUSCRIPT_REVISION = "70799c6"
+FIGURE_RECONSTRUCTION_REVISION = "d1cae50"
 
 
 def csv_rows(relative: str) -> list[dict[str, str]]:
@@ -83,8 +84,8 @@ def main() -> None:
     text = f"""# TEVC Reproducibility Package Revalidation Report
 
 - Generated: `{generated}`
-- Validated numerical-content revision: `{NUMERICAL_CONTENT_REVISION}`
-- Report metadata corrections: included in the Git commit containing this report
+- Core manuscript numerical-content revision: `{CORE_MANUSCRIPT_REVISION}`
+- Figure-reconstruction inputs and reproducibility metadata: added in `{FIGURE_RECONSTRUCTION_REVISION}` without changing the reported manuscript values
 - Authority: `20260811` formal manuscript and appendix tables
 - Package role: precomputed-artifact archive and audit package; **not a fully automated end-to-end reproduction**
 - Release metadata: `0.9.0-pre-release`; Zenodo DOI not yet minted

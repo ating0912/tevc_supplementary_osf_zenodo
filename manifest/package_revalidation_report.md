@@ -1,8 +1,8 @@
 # TEVC Reproducibility Package Revalidation Report
 
-- Generated: `2026-08-11T16:10:43+08:00`
-- Validated numerical-content revision: `70799c6`
-- Report metadata corrections: included in the Git commit containing this report
+- Generated: `2026-08-11T20:36:56+08:00`
+- Core manuscript numerical-content revision: `70799c6`
+- Figure-reconstruction inputs and reproducibility metadata: added in `d1cae50` without changing the reported manuscript values
 - Authority: `20260811` formal manuscript and appendix tables
 - Package role: precomputed-artifact archive and audit package; **not a fully automated end-to-end reproduction**
 - Release metadata: `0.9.0-pre-release`; Zenodo DOI not yet minted

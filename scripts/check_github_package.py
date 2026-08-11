@@ -265,8 +265,18 @@ def check_release_metadata() -> None:
             fail(f"{label} does not identify its executable renderer")
 
     report = (ROOT / "manifest/package_revalidation_report.md").read_text(encoding="utf-8")
-    if "Validated numerical-content revision: `70799c6`" not in report:
-        fail("revalidation report does not identify commit 70799c6 as the validated numerical content")
+    if "Core manuscript numerical-content revision: `70799c6`" not in report:
+        fail("revalidation report does not identify 70799c6 as the core manuscript revision")
+    if (
+        "Figure-reconstruction inputs and reproducibility metadata: added in `d1cae50` "
+        "without changing the reported manuscript values"
+        not in report
+    ):
+        fail("revalidation report does not identify d1cae50 as the figure-reconstruction revision")
+    if "Validated numerical-content revision:" in report:
+        fail("revalidation report still uses the superseded numerical-content wording")
+    if "Report metadata corrections:" in report:
+        fail("revalidation report still describes d1cae50 as metadata-only")
     if "Base Git revision: `12a90a0`" in report:
         fail("revalidation report still identifies the superseded base revision")
 
