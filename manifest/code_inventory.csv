@@ -363,7 +363,7 @@ code/train_experiment_c_stability_selector.py,code/train_experiment_c_stability_
 code/train_meta_designed_ecmade_moo.py,code/train_meta_designed_ecmade_moo.py,14349
 code/validate_cec2009_official_uf.m,code/validate_cec2009_official_uf.m,1566
 code/validate_v43_native_igd.m,code/validate_v43_native_igd.m,2184
-scripts/check_github_package.py,scripts/check_github_package.py,12916
+scripts/check_github_package.py,scripts/check_github_package.py,13973
 scripts/check_no_personal_paths.py,scripts/check_no_personal_paths.py,1400
 scripts/check_package.py,scripts/check_package.py,3447
 scripts/check_paper_values.py,scripts/check_paper_values.py,10456
@@ -374,4 +374,4 @@ scripts/run_stage.py,scripts/run_stage.py,1695
 scripts/sanitize_run_paths.py,scripts/sanitize_run_paths.py,2231
 scripts/update_artifact_checksums.py,scripts/update_artifact_checksums.py,3177
 scripts/update_code_inventory.py,scripts/update_code_inventory.py,1126
-scripts/write_revalidation_report.py,scripts/write_revalidation_report.py,8805
+scripts/write_revalidation_report.py,scripts/write_revalidation_report.py,8680

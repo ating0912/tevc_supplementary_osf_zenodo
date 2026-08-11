@@ -232,6 +232,24 @@ def check_release_metadata() -> None:
     readmes = (ROOT / "README.md").read_text(encoding="utf-8") + (ROOT / "README.zh-TW.md").read_text(encoding="utf-8")
     if "ExperimentC_NoReplicate_ECMADE_MOO" in readmes or "24.6965944272" in readmes:
         fail("bilingual README still contains superseded Experiment C or RankScore conclusions")
+    if "GitHub/OSF/Zenodo supplementary package" in readmes or "GitHub/OSF/Zenodo 預發行" in readmes:
+        fail("README implies that OSF/Zenodo pre-release archives already exist")
+
+    figure_map = read_csv(ROOT / "manifest/table_figure_map.csv")
+    expected_figures = {
+        "Fig. S2": "figures/fig_feature_importance_no_replicate.png",
+        "Fig. S3": "figures/fig_shap_global_importance_grouped.png",
+    }
+    mapped = {row["paper_artifact"]: row["package_output"] for row in figure_map}
+    for label, path in expected_figures.items():
+        if mapped.get(label) != path:
+            fail(f"{label} is not explicitly mapped to {path}")
+
+    report = (ROOT / "manifest/package_revalidation_report.md").read_text(encoding="utf-8")
+    if "Validated numerical-content revision: `70799c6`" not in report:
+        fail("revalidation report does not identify commit 70799c6 as the validated numerical content")
+    if "Base Git revision: `12a90a0`" in report:
+        fail("revalidation report still identifies the superseded base revision")
 
 
 def check_checksums() -> None:

@@ -2,7 +2,7 @@
 
 [English](README.md)
 
-本 repository 是 TEVC 投資組合最佳化研究的 GitHub/OSF/Zenodo 預發行補充資料套件，保存實驗設定、完整研究程式、預先計算的 run-level 輸出、統計檢定、論文表格、圖、執行紀錄與原始 Pareto front（PF）CSV，供第三方核對研究證據。
+本 repository 是 TEVC 投資組合最佳化研究的 GitHub 預發行補充資料套件，並預定於內容凍結後封存至 OSF 與 Zenodo。套件保存實驗設定、完整研究程式、預先計算的 run-level 輸出、統計檢定、論文表格、圖、執行紀錄與原始 Pareto front（PF）CSV，供第三方核對研究證據。
 
 ## 1. 專案用意與主要結論
 
@@ -14,7 +14,7 @@
 
 本 repository 支援 artifact inspection 與 targeted reruns，**不是 fully automated end-to-end reproduction pipeline**。`audit_all_artifacts.py` 以 `--audit-only` 呼叫各階段驗證器，不會啟動所有 optimizer、重新產生 labels、重訓 selector、重建全部表格或自動產生論文。現行與歷史 producer 的角色見 `manifest/code_authority.csv`。
 
-`code/` 包含可用於指定實驗的 MATLAB/Python runners。完整 optimizer 重跑需要 MATLAB R2020b、記錄的 PlatEMO 版本、合法取得的原始資料與大量運算時間。封存 CSV 是本套件的固定證據快照。producer/provenance 路徑見 `manifest/source_file_map.csv`；正式與 audit-only 檔案的界線見 `manifest/artifact_authority.csv`。
+`code/` 包含可用於指定實驗的 MATLAB/Python runners。完整 optimizer 重跑需要 MATLAB R2020b、記錄的 PlatEMO 版本、合法取得的原始資料與大量運算時間。現行 CSV 構成本預發行版本的證據快照；正式投稿版本將於 `v1.0.0` release 時凍結。producer/provenance 路徑見 `manifest/source_file_map.csv`；正式與 audit-only 檔案的界線見 `manifest/artifact_authority.csv`。
 
 ## 3. 資料切分與正式 Selector
 

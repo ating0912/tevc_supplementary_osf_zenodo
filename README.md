@@ -2,7 +2,7 @@
 
 [Traditional Chinese](README.zh-TW.md)
 
-This repository is the pre-release GitHub/OSF/Zenodo supplementary package for the TEVC portfolio-optimization study. It preserves the experimental settings, complete research code, precomputed run-level outputs, statistical tests, paper tables, figures, run logs, and raw Pareto-front (PF) CSV archives needed to inspect the reported evidence.
+This repository is the pre-release GitHub supplementary package for the TEVC portfolio-optimization study and is intended for later archival on OSF and Zenodo after the package is frozen. It preserves the experimental settings, complete research code, precomputed run-level outputs, statistical tests, paper tables, figures, run logs, and raw Pareto-front (PF) CSV archives needed to inspect the reported evidence.
 
 ## 1. Project Purpose and Main Conclusion
 
@@ -14,7 +14,7 @@ Using the `20260811` manuscript and appendix tables as the authority, the result
 
 This repository supports artifact inspection and targeted reruns. It is **not a fully automated end-to-end reproduction pipeline**. `audit_all_artifacts.py` invokes package validators with `--audit-only`; it does not launch every optimizer, regenerate labels, retrain the selector, rebuild every table, or regenerate the manuscript. Current and historical producer roles are listed in `manifest/code_authority.csv`.
 
-Targeted MATLAB/Python runners are included in `code/`. Full optimizer reruns require MATLAB R2020b, the recorded PlatEMO versions, the original data rights, and substantial compute time. The archived CSV outputs are the frozen evidence snapshot. Repository-relative producer/provenance paths are listed in `manifest/source_file_map.csv`; authoritative and audit-only artifacts are distinguished in `manifest/artifact_authority.csv`.
+Targeted MATLAB/Python runners are included in `code/`. Full optimizer reruns require MATLAB R2020b, the recorded PlatEMO versions, the original data rights, and substantial compute time. The current CSV outputs constitute the evidence snapshot for this pre-release; the formal submission snapshot will be frozen in the `v1.0.0` release. Repository-relative producer/provenance paths are listed in `manifest/source_file_map.csv`; authoritative and audit-only artifacts are distinguished in `manifest/artifact_authority.csv`.
 
 ## 3. Data Split and Formal Selector
 

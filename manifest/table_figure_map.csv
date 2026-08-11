@@ -5,5 +5,7 @@ Selector final-test ablation table,paper_outputs/table_selector_final_test_ablat
 Six-algorithm real-market table,paper_outputs/table_real_market_six_algorithm.csv,real_market/six_algorithm_method_overall_summary_with_volatility.csv,code/build_p0_real_market_validation_package.py,formal_20260811
 Four-configuration real-market table,paper_outputs/table_real_market_configuration_protocols.csv,real_market/configured_overall_summary.csv,code/analyze_real_market_ecmade_config_comparison.py,formal_20260811
 MOKP table,paper_outputs/table_mokp.csv,experiments/mokp/overall_method_summary.csv,code/analyze_p1_mokp_results.py,formal_20260811
+Fig. S2,figures/fig_feature_importance_no_replicate.png,selector no-replicate feature-importance outputs,feature-importance plotting workflow,formal_20260811
+Fig. S3,figures/fig_shap_global_importance_grouped.png,selector grouped SHAP outputs,grouped-SHAP plotting workflow,formal_20260811
 Paper figures,figures/paper_figures.zip,archived plotting inputs,various plotting producers,archived
 PF raw archive,raw_pf/raw_pf_csv_part*.zip,raw final PF and population CSV,various optimizer runners,archived

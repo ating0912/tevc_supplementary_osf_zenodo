@@ -3,7 +3,6 @@ from __future__ import annotations
 import csv
 import datetime as dt
 import re
-import subprocess
 import zipfile
 from collections import Counter
 from pathlib import Path
@@ -11,6 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "manifest" / "package_revalidation_report.md"
+NUMERICAL_CONTENT_REVISION = "70799c6"
 
 
 def csv_rows(relative: str) -> list[dict[str, str]]:
@@ -26,11 +26,6 @@ def one(relative: str, **criteria: str) -> dict[str, str]:
     if len(matches) != 1:
         raise ValueError(f"Expected one row in {relative} for {criteria}; found {len(matches)}")
     return matches[0]
-
-
-def git_output(*args: str) -> str:
-    result = subprocess.run(["git", *args], cwd=ROOT, text=True, capture_output=True, check=False)
-    return result.stdout.strip() if result.returncode == 0 else "unavailable"
 
 
 def environment() -> dict[str, str]:
@@ -50,7 +45,6 @@ def environment() -> dict[str, str]:
 
 def main() -> None:
     generated = dt.datetime.now().astimezone().isoformat(timespec="seconds")
-    head = git_output("rev-parse", "--short", "HEAD")
     split = Counter(row["split"] for row in csv_rows("data/synthetic/split_manifest.csv"))
     checklist = csv_rows("manifest/supplementary_package_checklist.csv")
     authority = csv_rows("manifest/artifact_authority.csv")
@@ -89,7 +83,8 @@ def main() -> None:
     text = f"""# TEVC Reproducibility Package Revalidation Report
 
 - Generated: `{generated}`
-- Base Git revision: `{head}`
+- Validated numerical-content revision: `{NUMERICAL_CONTENT_REVISION}`
+- Report metadata corrections: included in the Git commit containing this report
 - Authority: `20260811` formal manuscript and appendix tables
 - Package role: precomputed-artifact archive and audit package; **not a fully automated end-to-end reproduction**
 - Release metadata: `0.9.0-pre-release`; Zenodo DOI not yet minted
