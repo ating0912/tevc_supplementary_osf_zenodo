@@ -82,22 +82,6 @@ Formal MOKP inference is limited to HV, IGD, PF overlap, PF drift, Diversity, an
 | Raw PF CSV archives | `raw_pf/raw_pf_csv_part*.zip` |
 | Provenance, authority, and checksums | `manifest/` |
 
-Large archives and the frozen selector use Git LFS. After cloning, run:
-
-```bash
-git lfs install
-git lfs pull
-conda env create -f environment.yml
-conda activate tevc-reproducibility
-python code/plot_grouped_feature_importance.py --output-dir figures
-python scripts/check_github_package.py
-python scripts/check_paper_values.py
-python scripts/check_no_personal_paths.py
-python audit_all_artifacts.py
-```
-
-The plotting command rebuilds formal Fig. S2 and Fig. S3 from the three packaged CSV files in `selector/figure_data/`. The remaining commands audit the archived snapshot; they are not an end-to-end experimental rerun. `--full-zip-test` additionally CRC-tests every ZIP member.
-
 ## Data Use and Release Status
 
 Synthetic instances, derived metrics, and raw optimization fronts are redistributed for research verification. Raw market prices are excluded where provider terms may apply; see `DATA_USE_STATEMENT.md`.
