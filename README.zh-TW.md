@@ -82,21 +82,7 @@ MOKP 正式推論只使用 HV、IGD、PF overlap、PF drift、Diversity 與 Runt
 | Raw PF CSV archives | `raw_pf/raw_pf_csv_part*.zip` |
 | Provenance、authority 與 checksums | `manifest/` |
 
-大型 archives 與 frozen selector 使用 Git LFS。clone 後執行：
 
-```bash
-git lfs install
-git lfs pull
-conda env create -f environment.yml
-conda activate tevc-reproducibility
-python code/plot_grouped_feature_importance.py --output-dir figures
-python scripts/check_github_package.py
-python scripts/check_paper_values.py
-python scripts/check_no_personal_paths.py
-python audit_all_artifacts.py
-```
-
-繪圖命令會從 `selector/figure_data/` 的三份正式 CSV 重建 Fig. S2 與 Fig. S3；其餘命令只稽核封存快照，不是 end-to-end experimental rerun。`--full-zip-test` 會額外執行所有 ZIP members 的 CRC 檢查。
 
 ## 資料使用與發行狀態
 
